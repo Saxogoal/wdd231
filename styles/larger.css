@@ -1,0 +1,18 @@
+@media (min-width: 768px) {
+    #menu { display: none; } /* Hide hamburger */
+    
+    .navigation {
+        display: flex;
+        background-color: #333;
+    }
+    
+    .navigation li { flex: 1 1 auto; text-align: center; }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .course-section { grid-column: span 2; }
+}
