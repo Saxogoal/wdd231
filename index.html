@@ -7,7 +7,6 @@
     <meta name="description" content="André Piros' Course Home Page for WDD 231, featuring a dynamic course list and responsive design.">
     <meta name="author" content="André Piros">
 
-    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
 
@@ -15,76 +14,60 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <script defer src="scripts/getdates.js"></script>
-    <script defer src="scripts/navigation.js"></script>
-    <script defer src="scripts/courses.js"></script>
+    <script defer src="scripts/getdate.js" defer></script>
+    <script defer src="scripts/navigation.js" defer></script>
+    <script defer src="scripts/course.js" defer></script>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <img src="images/logo.svg" alt="Course Logo" width="50" height="50">
-            <span>André Piros</span>
+            <img src="images/earth-outline.svg" alt="Course Logo" width="50" height="50">
+            <span>WDD 231 | Index Page</span>
         </div>
-        <button id="menu" aria-label="Toggle Menu">&#9776;</button>
+        <button id="hamburgerBtn">☰</button>
     </header>
-
-    <nav>
-        <ul class="navigation">
+    
+    <nav id="primaryNav">
+        <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="#">Chamber</a></li>
-            <li><a href="#">Final Project</a></li>
+            <li><a href="#">Final</a></li>
         </ul>
     </nav>
-
-<main>
-    <h1>Home</h1>
     
-    <section class="card">
-        <h2>Course Work</h2>
-        <ul>
-            <li>W01: Course Home Page</li>
-            <li>W02: Chamber Site Plan</li>
-            <li>W03: Web API Fundamentals</li>
-        </ul>
-    </section>
-
-    <section class="card">
-        <h2>São Paulo, Brazil</h2>
-        <figure>
-            <img src="images/sp_skyline.webp" alt="São Paulo Skyline">
-            <figcaption>São Paulo is a vibrant financial center in Brazil.</figcaption>
-        </figure>
-    </section>
-
-    <section class="certificate-container">
-        <div class="certificate-header">
-            <h2>Web and Computer Programming Certificate</h2>
-        </div>
+    <main>
+        <h1>Home</h1>
         
-        <div class="filter-buttons">
-            <button id="all">All Courses</button>
-            <button id="wdd">WDD Courses</button>
-            <button id="cse">CSE Courses</button>
-        </div>
-
-        <p class="course-count-msg">
-            The total number of courses listed below is <span id="course-count"></span>
-        </p>
-
-        <div id="course-list">
+        <section class="about">
+            <h2>About me</h2>
+            <p>My name is André. I am from São Paulo, Brazil. I am currently a student at BYU-Idaho, studying Software Development. I like to hike, read, and play basketball.</p>
+        </section>
+        
+        <section class="courses">
+            <h2>Course Work</h2>
+            <div class="button-group">
+                <button id="allBtn">All Courses</button>
+                <button id="wddBtn">WDD Courses</button>
+                <button id="cseBtn">CSE Courses</button>
             </div>
-
-        <p class="credits-msg">Total Credits: <span id="total-credits"></span></p>
-    </section>
+            <div id="courseCards" class="course-grid"></div>
+            <p id="totalCredits" class="total-credits"></p>
+        </section>
+        
+        <section class="location">
+            <h2>São Paulo, Brazil</h2>
+            <figure>
+                <img src="images/sp_skyline.webp" alt="São Paulo Skyline" loading="lazy">
+                <figcaption>São Paulo is a vibrant financial center in Brazil.</figcaption>
+            </figure>
+        </section>
     </main>
-
-        <footer>
-            <div class="social-links">
-                <a href="#"><img src="images/logo-github.svg" alt="GitHub"></a>
-                <a href="#"><img src="images/logo-linkedin.svg" alt="LinkedIn"></a>
-            </div>
-            <p>&copy; <span id="currentyear"></span> André Piros | São Paulo, Brazil</p>
-            <p id="lastModified"></p>
-        </footer>
+    
+    <footer>
+        <a href="https://github.com/Saxogoal?tab=repositories"><img src="images/logo-github.svg" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/andré-piros-250062210/"><img src="images/logo-linkedin.svg" alt="LinkedIn"></a>
+        <p>&copy; <span id="currentyear"></span> André Piros</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>

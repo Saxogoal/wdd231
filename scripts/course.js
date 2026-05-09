@@ -1,38 +1,84 @@
 const courses = [
-    { subject: 'CSE', number: 110, title: 'Intro to Programming', credits: 2, completed: true },
-    { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
-    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
-    { subject: 'WDD', number: 231, title: 'Web Frontend Development I', credits: 2, completed: false }
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        completed: true // Marked as completed
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        completed: true // Marked as completed
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        completed: true // Marked as completed
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        completed: true // Marked as completed
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        completed: false
+    }
 ];
 
-function displayCourses(filter = 'all') {
-    const container = document.querySelector('#course-list');
-    container.innerHTML = "";
-    
-    const filtered = filter === 'all' ? courses : courses.filter(c => c.subject === filter);
-    
-    filtered.forEach(course => {
-        const div = document.createElement('div');
-        // Match wireframe classes
-        div.className = `course-card ${course.completed ? 'completed' : 'incomplete'}`;
+const courseContainer = document.querySelector('#courseCards');
+const totalCreditsDisplay = document.querySelector('#totalCredits');
+
+function displayCourses(filteredList) {
+    // Clear container
+    courseContainer.innerHTML = '';
+
+    // Create cards dynamically
+    filteredList.forEach(course => {
+        const card = document.createElement('div');
+        card.className = `course-card ${course.completed ? 'completed' : 'incomplete'}`;
         
-        // Add checkmark if completed as per wireframe
-        const checkmark = course.completed ? "✓ " : "";
-        div.innerHTML = `${checkmark}${course.subject} ${course.number}`;
+        // Add checkmark for completed courses as seen in wireframe
+        const checkmark = course.completed ? '✓ ' : '';
+        card.innerHTML = `${checkmark}${course.subject} ${course.number}`;
         
-        container.appendChild(div);
+        courseContainer.appendChild(card);
     });
 
-    // Update dynamic numbers
-    document.querySelector('#course-count').textContent = filtered.length;
-    const total = filtered.reduce((sum, c) => sum + c.credits, 0);
-    document.querySelector('#total-credits').textContent = total;
+    // Requirement: Calculate total credits using reduce()
+    const total = filteredList.reduce((acc, course) => acc + course.credits, 0);
+    totalCreditsDisplay.textContent = `Total Credits: ${total}`;
 }
 
-document.querySelector('#all').onclick = () => displayCourses('all');
-document.querySelector('#cse').onclick = () => displayCourses('CSE');
-document.querySelector('#wdd').onclick = () => displayCourses('WDD');
+// Requirement: Filtering logic using array.filter()
+document.querySelector('#allBtn').addEventListener('click', () => displayCourses(courses));
 
-displayCourses();
+document.querySelector('#wddBtn').addEventListener('click', () => {
+    const wddCourses = courses.filter(course => course.subject === 'WDD');
+    displayCourses(wddCourses);
+});
+
+document.querySelector('#cseBtn').addEventListener('click', () => {
+    const cseCourses = courses.filter(course => course.subject === 'CSE');
+    displayCourses(cseCourses);
+});
+
+// Initial display on load
+displayCourses(courses);
