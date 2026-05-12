@@ -1,0 +1,101 @@
+/* Modern CSS Reset 
+   ========================================================================== */
+
+/* 1. Use a more-intuitive box-sizing model.
+   2. Remove default margins and padding from everything. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+  height: 100%;
+}
+
+/* 4. Improve text rendering and orientation adjustments */
+html {
+  line-height: 1.5; /* Better readability than 1.15 */
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* 5. Add accessible line-height and improve text rendering */
+body {
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 10. Improve Button UX */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Specific Element Fixes from your original file
+   ========================================================================== */
+
+/* Correct the font size and margin on h1 elements */
+h1 {
+  font-size: 2rem;
+  margin-block: 0.67em;
+}
+
+/* Correct inheritance and scaling of font size in all browsers. */
+code, kbd, samp, pre {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+  font-size: 1em;
+}
+
+/* Add the correct font size in all browsers. */
+small {
+  font-size: 80%;
+}
+
+/* Prevent sub and sup elements from affecting the line height */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+
+/* Remove the inheritance of text transform in Edge, Firefox, and IE. */
+button, select {
+  text-transform: none;
+}
+
+/* Hide templates */
+template, [hidden] {
+  display: none;
+}
