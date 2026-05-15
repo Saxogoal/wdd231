@@ -26,6 +26,14 @@ body {
     background-color: var(--secondary);
     color: var(--text);
     line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -38,13 +46,17 @@ a:hover {
     text-decoration: underline;
 }
 
-a:focus {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
     outline: 3px solid var(--accent-dark);
     outline-offset: 3px;
 }
 
 h1,
-h2 {
+h2,
+h3 {
     font-family: var(--heading-font);
     color: var(--primary);
 }
@@ -86,14 +98,13 @@ header nav {
 
 .nav-logo img {
     width: clamp(5rem, 15vw, 7rem);
-    height: auto;
     display: block;
 }
 
 #menu {
     border: none;
     background-color: transparent;
-    color: #ffffff;
+    color: white;
 
     font-size: 1.8rem;
 
@@ -109,22 +120,17 @@ header nav {
     border-radius: 4px;
 }
 
-#menu:hover,
-#menu:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-#menu:focus {
-    outline: 3px solid var(--accent);
-    outline-offset: 2px;
-}
-
 #menu::before {
     content: "☰";
 }
 
 #menu.open::before {
     content: "✕";
+}
+
+#menu:hover,
+#menu:focus-visible {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .nav-links {
@@ -143,11 +149,18 @@ header nav {
     color: var(--accent);
     font-weight: 600;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    min-height: 44px;
 }
 
 .nav-links a:hover {
     background-color: rgba(255, 255, 255, 0.08);
     text-decoration: none;
+}
+
+.nav-links a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
 }
 
 main {
@@ -160,9 +173,11 @@ main {
     text-align: center;
     margin-bottom: 2rem;
     padding: 1.5rem 1rem;
+
     background: linear-gradient(90deg,
             rgba(27, 58, 107, 0.08),
             rgba(232, 217, 164, 0.18));
+
     border-left: 5px solid var(--primary);
     border-radius: 8px;
 }
@@ -179,22 +194,26 @@ main {
 }
 
 .cta-button,
-.view-button,
-.btn-small {
+.view-button {
     border: none;
     border-radius: 4px;
     font-weight: 700;
     cursor: pointer;
+
+    min-height: 44px;
 }
 
 .cta-button {
     display: inline-block;
     width: 100%;
     padding: 0.9rem 1.5rem;
+
     background-color: var(--primary);
     color: var(--accent);
+
     font-family: var(--heading-font);
     font-size: 0.85rem;
+
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -214,177 +233,9 @@ main {
     color: white;
 }
 
-.benefits-button {
-    margin-top: 1.5rem;
-}
-
-.grid-container,
-.filter-controls,
-.form-grid {
-    display: grid;
-    gap: 1rem;
-}
-
-.grid-container {
-    gap: 2rem;
-}
-
-.card,
-.member-card {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
-}
-
-.card {
-    padding: 1rem;
-    border-top: 3px solid var(--primary);
-}
-
-.card h2,
-.member-content h2 {
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.4rem;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.85rem;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background-color: var(--secondary);
-    color: var(--text);
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: 2px solid var(--primary);
-}
-
-.hint,
-.popular-sectors-description,
-.business-card-details {
-    color: var(--text-soft);
-}
-
-.hint,
-.popular-sectors-description {
-    font-size: 0.9rem;
-}
-
-.business-list,
-#membersContainer.list-view {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.business-card {
-    background-color: var(--surface);
-    padding: 1rem;
-    border-left: 3px solid var(--primary);
-    border-radius: 8px;
-}
-
-.business-card-header,
-.business-card-details,
-.business-card-actions,
-.directory-controls,
-.tag-list {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.business-card-header {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.business-card-details {
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
-    gap: 0.75rem;
-}
-
-.business-name {
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.membership-badge {
-    padding: 0.25rem 0.7rem;
-    border-radius: 20px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.badge-gold {
-    background-color: #d4b13f;
-    color: #1f1f1f;
-    border: 1px solid #8a6b00;
-}
-
-.badge-silver {
-    background-color: #d6dde8;
-    color: #122848;
-    border: 1px solid #122848;
-}
-
-.badge-bronze {
-    background-color: #d2b48c;
-    color: #2b2118;
-    border: 1px solid #6f4e37;
-}
-
-.btn-small {
-    padding: 0.45rem 0.9rem;
-}
-
-.btn-view {
-    background-color: var(--primary);
-    color: var(--accent);
-}
-
-.btn-contact {
-    background-color: var(--accent);
-    color: var(--primary);
-}
-
-.accent-list,
-.tag-list {
-    list-style: none;
-}
-
-.accent-list li {
-    margin-bottom: 0.85rem;
-}
-
-.tag-list {
-    padding-top: 0.75rem;
-}
-
-.tag-list li {
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    background-color: var(--secondary);
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
 .directory-controls {
+    display: flex;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -400,8 +251,18 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+#membersContainer.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .member-card {
+    background-color: white;
+    border-radius: 12px;
     overflow: hidden;
+
+    box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
 }
 
 .member-card img {
@@ -415,6 +276,10 @@ main {
     padding: 1rem;
 }
 
+.member-content h3 {
+    margin-bottom: 1rem;
+}
+
 .member-content p {
     margin-bottom: 0.5rem;
 }
@@ -424,13 +289,81 @@ main {
     margin-top: 0.75rem;
     font-weight: 700;
 }
-#membersContainer.list-view .member-card {
-    display: flex;
-    align-items: center;
-}
 
 #membersContainer.list-view img {
     display: none;
+}
+
+.grid-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+
+    border-top: 3px solid var(--primary);
+
+    box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.filter-controls,
+.form-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background-color: var(--secondary);
+    color: var(--text);
+}
+
+.tag-list,
+.accent-list {
+    list-style: none;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+}
+
+.tag-list li {
+    padding: 0.3rem 0.8rem;
+
+    border-radius: 20px;
+
+    background-color: var(--secondary);
+
+    border: 1px solid var(--primary);
+
+    color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 footer {
@@ -447,9 +380,13 @@ footer {
     gap: 1rem;
 }
 
+.footer-left,
+.footer-right {
+    flex: 1;
+}
+
 .footer-left {
     text-align: left;
-    margin-left: 0.5rem;
 }
 
 .footer-center {
@@ -460,19 +397,10 @@ footer {
 
 .footer-right {
     text-align: right;
-    margin-right: 0.5rem;
-}
-
-.footer-left,
-.footer-right {
-    flex: 1;
 }
 
 footer a img {
     width: 30px;
-    margin: 0 10px;
-    filter: brightness(0) invert(1);
-    /* Turns black icons white */
     transition: transform 0.3s;
 }
 
