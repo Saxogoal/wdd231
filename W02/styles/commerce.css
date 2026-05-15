@@ -42,11 +42,21 @@ main {
 section {
     margin-bottom: 40px;
 }
+.sitemap img {
+    width: 35rem;
+    height: auto;
+    border: 2px solid var(--secondary);
+}
 
 .wireframe {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.wireframes img {
+    width: 70rem;
+    height: auto;
+    border: 2px solid var(--secondary);
 }
 
 .row {
