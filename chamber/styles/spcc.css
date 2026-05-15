@@ -56,23 +56,29 @@ header {
 }
 
 .header-top {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-}
-
-header h1 {
-    font-size: clamp(0.9rem, 3vw, 1.4rem);
-    text-align: center;
-    color: var(--accent);
-    line-height: 1.3;
 }
 
 .nav-logo {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 4px;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: clamp(0.9rem, 3vw, 1.4rem);
+    color: var(--accent);
+    line-height: 1.3;
+
+    margin-right: auto;
+    text-align: left;
+}
+
+header nav {
+    margin-left: 2rem;
 }
 
 .nav-logo img {
@@ -415,13 +421,60 @@ main {
     margin-top: 0.75rem;
     font-weight: 700;
 }
+#membersContainer.list-view .member-card {
+    display: flex;
+    align-items: center;
+}
+
+#membersContainer.list-view img {
+    display: none;
+}
 
 footer {
     background-color: var(--primary);
-    padding: 1.5rem;
-    text-align: center;
     color: var(--accent);
+
     margin-top: 2rem;
+    padding: 1.5rem 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.footer-left {
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.footer-center {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-right {
+    text-align: right;
+    margin-right: 0.5rem;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+}
+
+footer a img {
+    width: 30px;
+    margin: 0 10px;
+    filter: brightness(0) invert(1);
+    /* Turns black icons white */
+    transition: transform 0.3s;
+}
+
+footer a img:hover {
+    transform: scale(1.1);
 }
 
 footer p {
