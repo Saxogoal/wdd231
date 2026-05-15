@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Casa Bauducco Paulista",
+        "address": "Av. Paulista, 854, São Paulo, SP",
+        "phone": "(11) 3285-4890",
+        "website": "https://www.casabauducco.com.br",
+        "image": "images/casa-bauducco.webp",
+        "membership": 3,
+        "industry": "Food & Beverage",
+        "description": "Italian-inspired café and bakery offering artisan panettones, coffee, and pastries in the heart of Avenida Paulista."
+    },
+    {
+        "name": "Café Girondino",
+        "address": "Rua Boa Vista, 365, São Paulo, SP",
+        "phone": "(11) 3229-4574",
+        "website": "https://www.cafegirondino.com.br",
+        "image": "images/cafe-giron.webp",
+        "membership": 2,
+        "industry": "Food & Beverage",
+        "description": "Traditional coffee shop located in the historic center of São Paulo."
+    },
+    {
+        "name": "Famiglia Mancini",
+        "address": "Rua Avanhandava, 81, São Paulo, SP",
+        "phone": "(11) 3256-4320",
+        "website": "https://www.famigliamancini.com.br",
+        "image": "images/mancini.webp",
+        "membership": 3,
+        "industry": "Restaurant",
+        "description": "Traditional Italian restaurant famous for its pasta dishes and classic São Paulo atmosphere."
+    },
+    {
+        "name": "Mercado Municipal de São Paulo",
+        "address": "Rua da Cantareira, 306, São Paulo, SP",
+        "phone": "(11) 3313-3365",
+        "website": "https://www.mercadomunicipalsp.com",
+        "image": "images/mercadao.webp",
+        "membership": 3,
+        "industry": "Retail & Food Market",
+        "description": "Historic public market known for gourmet foods, fresh produce, and the iconic mortadella sandwich."
+    },
+    {
+        "name": "Galeria do Rock",
+        "address": "Av. São João, 439, São Paulo, SP",
+        "phone": "(11) 3331-1530",
+        "website": "https://www.galeriadorock.com.br",
+        "image": "images/rock.webp",
+        "membership": 2,
+        "industry": "Culture & Retail",
+        "description": "Iconic shopping center dedicated to music, streetwear, skate culture, and alternative fashion."
+    },
+    {
+        "name": "Japan House São Paulo",
+        "address": "Av. Paulista, 52, São Paulo, SP",
+        "phone": "(11) 3090-8900",
+        "website": "https://www.japanhousesp.com.br",
+        "image": "images/jap-house.webp",
+        "membership": 3,
+        "industry": "Culture & Education",
+        "description": "Japanese cultural center promoting art, technology, gastronomy, and innovation."
+    },
+    {
+        "name": "Instituto Moreira Salles",
+        "address": "Av. Paulista, 2424, São Paulo, SP",
+        "phone": "(11) 2842-9120",
+        "website": "https://www.ims.com.br",
+        "image": "images/ims.webp",
+        "membership": 2,
+        "industry": "Arts & Culture",
+        "description": "Cultural institute featuring photography, cinema, music, literature, and art exhibitions."
+    }
+]
