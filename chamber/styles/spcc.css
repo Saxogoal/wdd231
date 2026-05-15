@@ -43,8 +43,8 @@ a:focus {
     outline-offset: 3px;
 }
 
-h2,
-h3 {
+h1,
+h2 {
     font-family: var(--heading-font);
     color: var(--primary);
 }
@@ -241,8 +241,8 @@ main {
     border-top: 3px solid var(--primary);
 }
 
-.card h3,
-.member-content h3 {
+.card h2,
+.member-content h2 {
     margin-bottom: 1rem;
 }
 
