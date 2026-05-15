@@ -59,14 +59,9 @@ section {
     border: 2px solid var(--secondary);
 }
 
-.row {
-    display: flex;
-    gap: 10px;
-}
-
-.box {
-    border: 2px solid var(--secondary);
-    padding: 20px;
+footer {
+    background-color: var(--primary);
+    color: var(--accent);
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
 }
