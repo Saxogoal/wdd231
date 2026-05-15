@@ -344,6 +344,10 @@ main {
     list-style: none;
 }
 
+.accent-list a{
+    text-decoration: underline;
+}
+
 .tag-list {
     display: flex;
     flex-wrap: wrap;
