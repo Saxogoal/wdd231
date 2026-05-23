@@ -31,14 +31,18 @@ async function apiFetch() {
 
 // Displaying the results on the webpage
 function displayResults(data) {
-    currentTemp.innerHTML = `${data.main.temp}&deg;F`;
 
+    captionDesc.innerHTML = data.weather[0].description;
+    currentTemp.innerHTML = `${Math.round(data.main.temp)}&deg;F`;
+    
     const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
     weatherIcon.setAttribute('src', iconsrc);
     weatherIcon.setAttribute('alt', data.weather[0].description);
+    weatherIcon.removeAttribute('hidden');
 
     captionDesc.textContent = data.weather[0].description;
+    
 }
-
 apiFetch();
 
