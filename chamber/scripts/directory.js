@@ -1,16 +1,3 @@
-const menuButton = document.querySelector("#menu");
-const navLinks = document.querySelector("#navLinks");
-
-menuButton.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    menuButton.classList.toggle("open");
-    const isOpen = navLinks.classList.contains("open");
-    menuButton.setAttribute("aria-expanded", isOpen);
-});
-
-document.querySelector("#currentyear").textContent = new Date().getFullYear();
-document.querySelector("#lastModified").textContent = document.lastModified;
-
 const membersContainer = document.querySelector("#membersContainer");
 const gridButton = document.querySelector("#gridView");
 const listButton = document.querySelector("#listView");
