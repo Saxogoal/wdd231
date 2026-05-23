@@ -5,6 +5,8 @@
         "phone": "(11) 3285-4890",
         "website": "https://www.casabauducco.com.br",
         "image": "images/casa-bauducco.webp",
+        "width": 300,
+        "height": 300,
         "membership": 3,
         "industry": "Food & Beverage",
         "description": "Italian-inspired café and bakery offering artisan panettones, coffee, and pastries in the heart of Avenida Paulista."
@@ -15,6 +17,8 @@
         "phone": "(11) 3229-4574",
         "website": "https://www.cafegirondino.com.br",
         "image": "images/cafe-giron.webp",
+        "width": 300,
+        "height": 200,
         "membership": 2,
         "industry": "Food & Beverage",
         "description": "Traditional coffee shop located in the historic center of São Paulo."
@@ -25,6 +29,8 @@
         "phone": "(11) 3256-4320",
         "website": "https://www.famigliamancini.com.br",
         "image": "images/mancini.webp",
+        "width": 300,
+        "height": 200,
         "membership": 3,
         "industry": "Restaurant",
         "description": "Traditional Italian restaurant famous for its pasta dishes and classic São Paulo atmosphere."
@@ -35,6 +41,8 @@
         "phone": "(11) 3313-3365",
         "website": "https://www.mercadomunicipalsp.com",
         "image": "images/mercadao.webp",
+        "width": 400,
+        "height": 200,
         "membership": 3,
         "industry": "Retail & Food Market",
         "description": "Historic public market known for gourmet foods, fresh produce, and the iconic mortadella sandwich."
@@ -45,6 +53,8 @@
         "phone": "(11) 3331-1530",
         "website": "https://www.galeriadorock.com.br",
         "image": "images/rock.webp",
+        "width": 400,
+        "height": 200,
         "membership": 2,
         "industry": "Culture & Retail",
         "description": "Iconic shopping center dedicated to music, streetwear, skate culture, and alternative fashion."
@@ -55,6 +65,8 @@
         "phone": "(11) 3090-8900",
         "website": "https://www.japanhousesp.com.br",
         "image": "images/jap-house.webp",
+        "width": 400,
+        "height": 200,
         "membership": 3,
         "industry": "Culture & Education",
         "description": "Japanese cultural center promoting art, technology, gastronomy, and innovation."
@@ -65,6 +77,8 @@
         "phone": "(11) 2842-9120",
         "website": "https://www.ims.com.br",
         "image": "images/ims.webp",
+        "width": 340,
+        "height": 200,
         "membership": 2,
         "industry": "Arts & Culture",
         "description": "Cultural institute featuring photography, cinema, music, literature, and art exhibitions."
