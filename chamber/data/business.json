@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Casa Bauducco Paulista",
+        "address": "Av. Paulista, 854, São Paulo, SP",
+        "phone": "(11) 3285-4890",
+        "website": "https://www.casabauducco.com.br",
+        "image": "images/casa-bauducco.webp",
+        "width": 300,
+        "height": 300,
+        "membership": 3,
+        "industry": "Food & Beverage",
+        "description": "Italian-inspired café and bakery offering artisan panettones, coffee, and pastries in the heart of Avenida Paulista."
+    },
+    {
+        "name": "Café Girondino",
+        "address": "Rua Boa Vista, 365, São Paulo, SP",
+        "phone": "(11) 3229-4574",
+        "website": "https://www.cafegirondino.com.br",
+        "image": "images/cafe-giron.webp",
+        "width": 300,
+        "height": 200,
+        "membership": 2,
+        "industry": "Food & Beverage",
+        "description": "Traditional coffee shop located in the historic center of São Paulo."
+    },
+    {
+        "name": "Famiglia Mancini",
+        "address": "Rua Avanhandava, 81, São Paulo, SP",
+        "phone": "(11) 3256-4320",
+        "website": "https://www.famigliamancini.com.br",
+        "image": "images/mancini.webp",
+        "width": 300,
+        "height": 200,
+        "membership": 3,
+        "industry": "Restaurant",
+        "description": "Traditional Italian restaurant famous for its pasta dishes and classic São Paulo atmosphere."
+    }
+]
