@@ -4,7 +4,7 @@ const listButton = document.querySelector("#listView");
 
 async function getMembers() {
     try {
-        const response = await fetch("data/members.json");
+        const response = await fetch("data/business.json");
         if (!response.ok) {
             throw new Error("Failed to fetch member data.");
         }
@@ -15,11 +15,6 @@ async function getMembers() {
     }
 }
 
-function getMembershipLevel(level) {
-    if (level === 3) return "Gold Member";
-    if (level === 2) return "Silver Member";
-    return "Member";
-}
 
 // Derive 1x and 2x paths from the base image path in members.json.
 function getResponsivePaths(imagePath) {
@@ -59,11 +54,9 @@ function displayMembers(members) {
 
             <div class="member-content">
                 <h3>${member.name}</h3>
-                <p><strong>Address:</strong> ${member.address}</p>
-                <p><strong>Phone:</strong> ${member.phone}</p>
                 <p><strong>Industry:</strong> ${member.industry}</p>
-                <p>${member.description}</p>
-                <p><strong>Membership:</strong> ${getMembershipLevel(member.membership)}</p>
+                <p><strong>Email:</strong> <a href="mailto:${member.email}">${member.email}</a></p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
                 <a href="${member.website}" target="_blank" rel="noopener noreferrer">
                     Visit Website
                 </a>
