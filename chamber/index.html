@@ -4,30 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page | São Paulo Chamber of Commerce</title>
+    <title>Home | São Paulo Chamber of Commerce</title>
     <meta name="description"
         content="Browse the São Paulo Chamber of Commerce directory to discover local businesses and networking opportunities in São Paulo.">
     <meta name="author" content="André Piros">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://saxogoal.github.io/wdd231/chamber/index.html">
 
-    <meta property="og:title" content="Home Page | São Paulo Chamber of Commerce">
-    <meta property="og:description"
-        content="Discover the São Paulo Chamber of Commerce and its member businesses.">
+    <meta property="og:title" content="Home | São Paulo Chamber of Commerce">
+    <meta property="og:description" content="Discover the São Paulo Chamber of Commerce and its member businesses.">
     <meta property="og:image" content="https://saxogoal.github.io/wdd231/chamber/images/spflag.webp">
     <meta property="og:url" content="https://saxogoal.github.io/wdd231/chamber/index.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Home Page | São Paulo Chamber of Commerce">
-    <meta name="twitter:description"
-        content="Discover the São Paulo Chamber of Commerce and its member businesses.">
+    <meta name="twitter:title" content="Home | São Paulo Chamber of Commerce">
+    <meta name="twitter:description" content="Discover the São Paulo Chamber of Commerce and its member businesses.">
     <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/chamber/images/spflag.webp">
 
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="preload" as="image" href="images/spflag.webp">
+    <link rel="preload" as="image" href="images/spflag-256.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -37,32 +35,33 @@
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&display=swap">
     </noscript>
+
     <link rel="stylesheet" href="styles/spcc.css">
     <link rel="stylesheet" href="styles/spcc-large.css">
 
     <script src="scripts/common.js" defer></script>
     <script src="scripts/business.js" defer></script>
 </head>
+
 <body>
+
     <header>
         <div class="header-top">
             <a href="index.html" class="nav-logo" aria-label="São Paulo Chamber of Commerce Home">
                 <picture>
-                    <source srcset="images/spflag-350.webp 3x, images/spflag-256.webp 2x" type="image/webp">
-                    <img src="images/spflag-350.webp" alt="São Paulo Chamber of Commerce logo" width="128" height="85"
+                    <source srcset="images/spflag-256.webp 1x, images/spflag-350.webp 2x" type="image/webp">
+                    <img src="images/spflag-256.webp" alt="São Paulo Chamber of Commerce logo" width="128" height="85"
                         fetchpriority="high">
                 </picture>
             </a>
-            <p class="site-title">
-                São Paulo Chamber of Commerce
-            </p>
+            <p class="site-title">São Paulo Chamber of Commerce</p>
             <nav aria-label="Main navigation">
                 <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
                     aria-controls="navLinks"></button>
             </nav>
         </div>
         <div class="nav-links" id="navLinks">
-            <a href="index.html"aria-current="page">Home</a>
+            <a href="index.html" aria-current="page">Home</a>
             <a href="discover.html">Discover</a>
             <a href="directory.html">Business Directory</a>
             <a href="join.html">Join</a>
@@ -72,25 +71,55 @@
     </header>
 
     <main>
-        <section class="hero">
+
+        <!-- ── Hero ───────────────────────────────────── -->
+        <section class="hero-image-section" aria-label="Hero">
             <picture id="heroImage">
-                <img src="images/sp_skyline.webp" alt="São Paulo cityscape" loading="lazy">
+                <img src="images/sp_skyline.webp" alt="São Paulo cityscape" width="1000" height="400"
+                    fetchpriority="high">
             </picture>
-            <a href="join.html" class="cta-button">Keynote Tickets</a>
+            <a href="join.html" class="cta-button hero-cta">Keynote Tickets</a>
         </section>
-        <div class="directory-controls">
-            <button id="gridView" class="view-button" type="button">Grid View</button>
-            <button id="listView" class="view-button" type="button">List View</button>
+
+        <!-- ── Page heading ───────────────────────────── -->
+        <h1 class="page-heading">Home</h1>
+
+        <!-- ── Info row: Events | Weather | Forecast ──── -->
+        <div class="info-grid">
+
+            <!-- Events -->
+            <div class="info-card">
+                <h2 class="info-card-header">Events</h2>
+                <div class="info-card-body" id="eventsContent">
+                    <p class="loading-text">Loading events…</p>
+                </div>
+            </div>
+
+            <!-- Current Weather -->
+            <div class="info-card">
+                <h2 class="info-card-header">Current Weather</h2>
+                <div class="info-card-body weather-current" id="currentWeather">
+                    <p class="loading-text">Loading weather…</p>
+                </div>
+            </div>
+
+            <!-- Weather Forecast -->
+            <div class="info-card">
+                <h2 class="info-card-header">Weather Forecast</h2>
+                <div class="info-card-body" id="weatherForecast">
+                    <p class="loading-text">Loading forecast…</p>
+                </div>
+            </div>
+
         </div>
 
-        <section id="membersContainer" class="grid-view" aria-label="Business directory listings">
+        <!-- ── Business spotlight cards ───────────────── -->
+        <section id="membersContainer" class="members-home" aria-label="Member business spotlight">
             <h2 class="sr-only">Member Listings</h2>
         </section>
-        
-        <div class="grid-container">
-            <div class="card full-width"></div>
-        </div>
+
     </main>
+
     <footer>
         <div class="footer-left">
             <p>São Paulo Chamber of Commerce</p>
@@ -119,5 +148,7 @@
             <p>Last Modified: <span id="lastModified"></span></p>
         </div>
     </footer>
-</body> 
+
+</body>
+
 </html>
