@@ -8,7 +8,7 @@ const LON = -46.6333;
 const APIKEY = "87752bf08c51779202e8da8f3ad6e63f";
 const UNITS = "imperial";
 
-// MEMBERS
+// ─── MEMBERS ────────────────────────────────────────────────────────
 
 async function getMembers() {
     try {
@@ -32,40 +32,51 @@ function getResponsivePaths(imagePath) {
     return { src1x: `${stem}-1x.webp`, src2x: `${stem}-2x.webp` };
 }
 
-// Home page card
+// Home page card - RANDOM SPOTLIGHTS
+// Home page card - RANDOM SPOTLIGHTS
 function displayHomeMembers(members) {
+    // Keep the screen-reader heading
     membersContainer.innerHTML = '<h2 class="sr-only">Member Listings</h2>';
     const fragment = document.createDocumentFragment();
 
-    // Show only gold + silver members on the home page spotlight 
-    const spotlight = members
-        .filter(m => m.membership >= 2)
-        .slice(0, 3);
+    // 1. Filter for only Gold (3) or Silver (2) members
+    const qualifiedMembers = members.filter(m => m.membership === 2 || m.membership === 3);
 
+    // 2. Randomly shuffle the filtered array
+    qualifiedMembers.sort(() => 0.5 - Math.random());
+
+    // 3. Randomly choose to display either 2 or 3 members
+    const displayCount = Math.floor(Math.random() * 2) + 2;
+
+    // 4. Slice the array to grab the random spotlights
+    const spotlight = qualifiedMembers.slice(0, displayCount);
+
+    // 5. Build the HTML for each selected member
     spotlight.forEach((member) => {
         const { src1x, src2x } = getResponsivePaths(member.image);
         const card = document.createElement("article");
         card.classList.add("home-member-card");
 
+        // Display Company Name, Membership Level, Logo, Phone, Address, and Website
         card.innerHTML = `
             <div class="home-member-card-top">
                 <h3>${member.name}</h3>
-                <p class="home-member-tagline">${member.industry}</p>
+                <p class="home-member-tagline">${getMembershipLevel(member.membership)}</p>
             </div>
             <div class="home-member-card-bottom">
                 <picture>
                     <source type="image/webp" srcset="${src1x} 1x, ${src2x} 2x">
                     <img class="home-member-thumb"
                         src="${src1x}"
-                        alt="${member.name}"
+                        alt="${member.name} Logo"
                         width="64" height="64"
                         loading="lazy"
                         decoding="async">
                 </picture>
                 <div class="home-member-info">
-                    <p>EMAIL: <a href="mailto:${member.email}">${member.email}</a></p>
-                    <p>PHONE: ${member.phone}</p>
-                    <p>URL: <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace('https://', '')}</a></p>
+                    <p><strong>Phone:</strong> ${member.phone}</p>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>URL:</strong> <a href="${member.website}" target="_blank" rel="noopener noreferrer">${member.website.replace('https://', '')}</a></p>
                 </div>
             </div>
         `;
@@ -75,8 +86,7 @@ function displayHomeMembers(members) {
 
     membersContainer.appendChild(fragment);
 }
-
-// CURRENT WEATHER
+// ─── CURRENT WEATHER ────────────────────────────────────────────────
 
 async function getWeather() {
     try {
@@ -121,6 +131,7 @@ function displayCurrentWeather(data) {
     `;
 }
 
+// ─── WEATHER FORECAST ───────────────────────────────────────────────
 
 async function getForecast() {
     try {
@@ -184,7 +195,6 @@ function displayEvents() {
     eventsEl.innerHTML = html;
 }
 
-// INIT
 
 getMembers();
 getWeather();
