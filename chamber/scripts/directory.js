@@ -1,3 +1,5 @@
+import { getMembershipLevel, getResponsivePaths } from "./utils.js";
+
 const membersContainer = document.querySelector("#membersContainer");
 const gridButton = document.querySelector("#gridView");
 const listButton = document.querySelector("#listView");
@@ -13,21 +15,6 @@ async function getMembers() {
     } catch (error) {
         console.error(error);
     }
-}
-
-function getMembershipLevel(level) {
-    if (level === 3) return "Gold Member";
-    if (level === 2) return "Silver Member";
-    return "Member";
-}
-
-// Derive 1x and 2x paths from the base image path in members.json.
-function getResponsivePaths(imagePath) {
-    const stem = imagePath.replace('.webp', '');
-    return {
-        src1x: `${stem}-1x.webp`,
-        src2x: `${stem}-2x.webp`,
-    };
 }
 
 function displayMembers(members) {
