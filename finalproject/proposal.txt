@@ -1,0 +1,23 @@
+Project Subject
+
+The subject of my website project is a personal reading tracker and digital book log called “PageTurner Hub.” 
+The website will allow users to explore books, track their reading progress, organize reading goals, 
+and discover new titles through a clean and responsive interface.
+
+Project Description
+
+PageTurner Hub will be a three-page responsive web application focused on books and reading organization. 
+The home page will introduce the purpose of the website and display reading-related information such as motivational 
+literary quotes and reading benefits. The library page will dynamically display a collection of books retrieved 
+from a JSON data source or free book API, showing information such as title, author, genre, page count, and ratings. 
+Users will be able to filter and sort books using JavaScript array methods and open modal dialogs for additional details
+about each book. The final page will include a form where users can log completed books, create reading goals,
+or submit reviews. Local storage will be used to save user preferences and currently tracked books.
+
+Project Reason and Purpose
+
+I chose this project because it provides an opportunity to practice important web development skills such as asynchronous 
+data fetching, DOM manipulation, responsive design, local storage, modal dialogs, and JavaScript array methods in a realistic
+and useful application. The project also promotes reading habits and organization by giving users a simple and accessible platform 
+to manage their reading progress and discover literature. Additionally, the clean and minimalist design style of a reading application 
+will help me focus on accessibility, performance optimization, and modern user interface design principles.
