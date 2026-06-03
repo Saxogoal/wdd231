@@ -1,4 +1,4 @@
-import { getMembershipLevel, getResponsivePaths } from "./utils.js";
+import { getMembershipLevel, getResponsivePaths } from "./utilities.js";
 
 const membersContainer = document.querySelector("#membersContainer");
 const currentWeatherEl = document.querySelector("#currentWeather");
