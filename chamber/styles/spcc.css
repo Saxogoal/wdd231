@@ -13,7 +13,7 @@
     --secondary: #f5f2ec;
     --surface: #ede9e0;
     --accent: #e8d9a4;
-    --accent-dark: #07c24e;
+    --accent-dark: #ff00d4;
     --text: #2c2c2a;
     --text-soft: #444;
     --border: #c8c2b4;
@@ -48,8 +48,7 @@ a:hover {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
+select:focus-visible {
     outline: 3px solid var(--accent-dark);
     outline-offset: 3px;
 }
@@ -86,8 +85,7 @@ footer,
 .weather-current .weather-icon,
 #membersContainer.list-view,
 .home-member-card,
-.nav-links.open,
-.join-form {
+.nav-links.open {
     display: flex;
 }
 
@@ -116,7 +114,6 @@ footer,
 .filter-controls,
 .form-grid,
 .members-home,
-
 .weather-current .weather-top,
 footer {
     gap: 1rem;
@@ -134,8 +131,7 @@ footer {
 .cta-button,
 .view-button,
 footer,
-.nav-links a,
-.join-form button {
+.nav-links a {
     color: var(--accent);
 }
 
@@ -143,8 +139,7 @@ header,
 .nav-links,
 .cta-button,
 .view-button,
-footer,
-.join-form button {
+footer {
     background-color: var(--primary);
 }
 
@@ -153,13 +148,11 @@ footer,
 .view-button,
 .member-content a,
 .home-member-card-top h3,
-#eventsContent .event-date,
-.join-form button {
+#eventsContent .event-date {
     font-weight: 700;
 }
 
 .form-group label,
-.join-form label,
 .tag-list li,
 .home-member-info a,
 .home-member-card-top h3,
@@ -198,7 +191,6 @@ header nav {
     min-width: 44px;
     min-height: 44px;
     border-radius: 4px;
-    color: var(--accent);
 }
 
 #menu::before {
@@ -289,17 +281,14 @@ main {
 
 /* ── Buttons ── */
 .cta-button,
-.view-button,
-.join-form button {
+.view-button {
     border: none;
     cursor: pointer;
     min-height: 44px;
     border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
 }
 
-.cta-button,
-.join-form button {
+.cta-button {
     display: inline-block;
     width: 100%;
     padding: 0.9rem 1.5rem;
@@ -308,11 +297,8 @@ main {
     letter-spacing: 0.05em;
 }
 
-.cta-button:hover,
-.join-form button:hover,
-.join-form button:focus-visible {
+.cta-button:hover {
     background-color: var(--primary-dark);
-    color: white;
     text-decoration: none;
 }
 
@@ -330,12 +316,11 @@ main {
     padding: 0.75rem 1rem;
 }
 
-/* ── Card Systems & Component Shells ── */
+/* ── Card Systems & Directory ── */
 .member-card,
 .card,
 .info-card,
-.home-member-card,
-fieldset {
+.home-member-card {
     background-color: white;
 }
 
@@ -366,14 +351,12 @@ fieldset {
 }
 
 .member-card,
-.card,
-fieldset {
+.card {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
 }
 
-.card,
-fieldset {
+.card {
     border-top: 3px solid var(--primary);
 }
 
@@ -417,45 +400,20 @@ fieldset {
 }
 
 /* ── Form Components ── */
-fieldset {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    border: none;
-}
-
-.join-form {
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.join-form button {
-    margin-top: 1.25rem;
-}
-
-.form-group label,
-.join-form label {
+.form-group label {
     display: block;
     margin-bottom: 0.4rem;
     font-weight: 600;
 }
 
-.join-form label {
-    margin-top: 0.5rem;
-}
-
 .form-group input,
-.form-group select,
-.join-form input:not([type="hidden"]),
-.join-form select,
-.join-form textarea {
+.form-group select {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--border);
     border-radius: 6px;
     background-color: var(--secondary);
     color: var(--text);
-    font-family: inherit;
 }
 
 /* ── Weather & Event Components ── */
@@ -663,147 +621,194 @@ footer a img:hover {
 footer p {
     margin: 0.5rem 0;
 }
-/* ── Join Form Adjustments ── */
+/* ───────── JOIN PAGE ───────── */
+
+.grid-container {
+    display: grid;
+    gap: 2rem;
+}
+
 fieldset {
     border: none;
+    background: #fff;
+    border-top: 3px solid var(--primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
 }
 
 .join-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
+    display: grid;
+    gap: 1rem;
 }
 
-/* Style fieldset textarea to look exactly like your input/select definitions */
-.form-group textarea {
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.join-form input:not([type="submit"]),
+.join-form select,
+.join-form textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: .85rem;
     border: 1px solid var(--border);
     border-radius: 6px;
-    background-color: var(--secondary);
+    background: var(--secondary);
+    font: inherit;
     color: var(--text);
-    font-family: inherit;
+}
+
+.join-form textarea {
+    min-height: 140px;
     resize: vertical;
 }
 
-/* Spacer rule for stacking membership cards vertically inside their section layout */
-main .grid-container>section {
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.join-form .cta-button,
+.join-form input[type="submit"] {
+    width: 100%;
+    margin-top: .5rem;
+}
+
+/* Membership cards */
+
+.membership-section {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
 }
 
-/* Staggered load animation using your pre-existing .card mapping */
-@keyframes cardArrival {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.membership-section .card {
+    transition: transform .25s ease,
+        box-shadow .25s ease;
 }
 
-main .grid-container .card {
-    opacity: 0;
-    animation: cardArrival 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+.membership-section .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(27, 58, 107, .15);
 }
 
-/* Sequential display delays to drive intuitive visual tracking */
-main .grid-container .card:nth-child(1) {
-    animation-delay: 0.1s;
-    border-top-color: var(--border);
+.membership-section .card h3 {
+    margin-bottom: .5rem;
 }
 
-main .grid-container .card:nth-child(2) {
-    animation-delay: 0.2s;
+.membership-section .card p {
+    margin-bottom: 1rem;
+    color: var(--text-soft);
+}
+
+/* Membership colors */
+
+.membership-section .card:nth-of-type(1) {
+    border-top-color: #7d7d7d;
+}
+
+.membership-section .card:nth-of-type(2) {
     border-top-color: #cd7f32;
 }
 
-/* Bronze */
-main .grid-container .card:nth-child(3) {
-    animation-delay: 0.3s;
-    border-top-color: #a0a0a0;
+.membership-section .card:nth-of-type(3) {
+    border-top-color: #c0c0c0;
 }
 
-/* Silver */
-main .grid-container .card:nth-child(4) {
-    animation-delay: 0.4s;
+.membership-section .card:nth-of-type(4) {
     border-top-color: #ffd700;
 }
 
-/* Gold */
+/* ───────── MODALS ───────── */
 
-main .grid-container .card h3 {
-    margin-bottom: 0.4rem;
-}
-
-main .grid-container .card p {
-    font-size: 0.88rem;
-    color: var(--text-soft);
-    margin-bottom: 1rem;
-}
-
-/* ── Native Dialog Customization ── */
 dialog.card {
-    max-width: 500px;
+    max-width: 550px;
     width: 90%;
-    margin: auto;
-    border: none;
     padding: 0;
-    overflow: hidden;
+    border: none;
 }
 
-dialog.card::backdrop {
-    background: rgba(18, 40, 72, 0.6);
+dialog::backdrop {
+    background: rgba(0, 0, 0, .55);
     backdrop-filter: blur(3px);
 }
 
 .modal-header {
-    background-color: var(--primary);
-    color: var(--accent);
-    padding: 1.1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--primary);
+    color: var(--accent);
+    padding: 1rem 1.5rem;
 }
 
 .modal-header h2 {
-    color: var(--accent);
+    color: inherit;
     margin: 0;
-    font-size: 1.3rem;
 }
 
 .modal-close {
-    background: transparent;
+    background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 1.8rem;
     cursor: pointer;
-    line-height: 1;
 }
 
-.modal-close:hover,
-.modal-close:focus-visible {
-    color: var(--accent-dark);
-}
-main .grid-container>section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
 .modal-body {
     padding: 1.5rem;
 }
 
 .modal-body ul {
     margin-top: 1rem;
-    padding-left: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--text-soft);
+    padding-left: 1.2rem;
+}
+
+.modal-body li+li {
+    margin-top: .5rem;
+}
+
+/* ───────── THANK YOU PAGE ───────── */
+
+.thankyou-section {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.thankyou-section h2 {
+    margin: 2rem 0 1rem;
+}
+
+.thankyou-section p {
+    margin-bottom: 1rem;
+}
+
+#results {
+    margin-top: 1.5rem;
+}
+
+.results-list {
+    list-style: none;
+    display: grid;
+    gap: .75rem;
+    text-align: left;
+}
+
+.results-list li {
+    padding: .85rem 1rem;
+    background: var(--surface);
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+}
+
+.results-list strong {
+    color: var(--primary);
 }

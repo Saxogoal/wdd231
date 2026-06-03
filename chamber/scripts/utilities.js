@@ -14,22 +14,34 @@ export function getResponsivePaths(imagePath) {
 export const myInfo = new URLSearchParams(window.location.search);
 console.log(myInfo);
 
-export function displayResults(myInfo) {
-    console.log(myInfo.get("firstName"));
-    console.log(myInfo.get("lastName"));
-    console.log(myInfo.get("email"));
-    console.log(myInfo.get("phone"));
-    console.log(myInfo.get("business"));
-    console.log(myInfo.get("membership"));
+export function displayResults(params) {
+    const resultsDiv = document.getElementById("results");
+    if (!resultsDiv) return;
 
-    document.querySelector("#results").textContent = `
-        <p>Thank you, ${myInfo.get("firstName")} ${myInfo.get("lastName")}, for your interest in joining the Chamber of Commerce!</p>
-        <p>Your provided information:</p> 
-        <ul>
-            <li><strong>Email:</strong> ${myInfo.get("email")}</li>
-            <li><strong>Phone:</strong> ${myInfo.get("phone")}</li>
-            <li><strong>Business:</strong> ${myInfo.get("business")}</li>
-            <li><strong>Membership:</strong> ${myInfo.get("membership")}</li>
+    const firstName = params.get("firstName") || "N/A";
+    const lastName = params.get("lastName") || "N/A";
+    const email = params.get("email") || "N/A";
+    const phone = params.get("phone") || "N/A";
+    const business = params.get("business") || "N/A";
+    const membership = params.get("membership") || "N/A";
+    const timestamp = params.get("timestamp") || "N/A";
+
+    // Format timestamp to readable date
+    let formattedDate = timestamp;
+    if (timestamp !== "N/A") {
+        const date = new Date(timestamp);
+        formattedDate = date.toLocaleString();
+    }
+
+    resultsDiv.innerHTML = `
+        <ul class="results-list">
+            <li><strong>First Name:</strong> ${firstName}</li>
+            <li><strong>Last Name:</strong> ${lastName}</li>
+            <li><strong>Email:</strong> ${email}</li>
+            <li><strong>Mobile Phone:</strong> ${phone}</li>
+            <li><strong>Business / Organization:</strong> ${business}</li>
+            <li><strong>Membership Level:</strong> ${membership}</li>
+            <li><strong>Application Date:</strong> ${formattedDate}</li>
         </ul>
-        `;
+    `;
 }

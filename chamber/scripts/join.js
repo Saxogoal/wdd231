@@ -1,50 +1,48 @@
 import { displayResults } from "./utilities.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Corrected target lookup matching the new timestamp ID
+
+    // Set hidden timestamp when form loads
     const hiddenTimestamp = document.getElementById("timestamp");
     if (hiddenTimestamp) {
         hiddenTimestamp.value = new Date().toISOString();
     }
 
-    // Modal triggering controls mapping
-    const modalLaunchers = document.querySelectorAll(".view-button[data-modal]");
-    const modalDismissers = document.querySelectorAll(".modal-close");
-
-    // Launch targeted popup element using showModal browser API
-    modalLaunchers.forEach(btn => {
+    // Modal open buttons
+    document.querySelectorAll(".view-button[data-modal]").forEach(btn => {
         btn.addEventListener("click", () => {
-            const destinationId = btn.getAttribute("data-modal");
-            const targetPopup = document.getElementById(destinationId);
-            if (targetPopup) {
-                targetPopup.showModal();
-            }
+            const targetModal = document.getElementById(btn.getAttribute("data-modal"));
+            if (targetModal) targetModal.showModal();
         });
     });
 
-    // Dismiss open dialog layout
-    modalDismissers.forEach(btn => {
+    // Modal close buttons
+    document.querySelectorAll(".modal-close").forEach(btn => {
         btn.addEventListener("click", () => {
             const dialog = btn.closest("dialog");
             if (dialog) dialog.close();
         });
     });
 
-    // Cleanly close when user clicks on backdrop blur areas
+    // Close modal when clicking on backdrop
     document.querySelectorAll("dialog.card").forEach(dialog => {
         dialog.addEventListener("click", (e) => {
-            const limits = dialog.getBoundingClientRect();
+            const rect = dialog.getBoundingClientRect();
             if (
-                e.clientX < limits.left ||
-                e.clientX > limits.right ||
-                e.clientY < limits.top ||
-                e.clientY > limits.bottom
+                e.clientX < rect.left ||
+                e.clientX > rect.right ||
+                e.clientY < rect.top ||
+                e.clientY > rect.bottom
             ) {
                 dialog.close();
             }
         });
     });
 
-    const myInfo = {};
-    displayResults(myInfo);
+    // Display results on thankyou.html
+    const resultsDiv = document.getElementById("results");
+    if (resultsDiv) {
+        const params = new URLSearchParams(window.location.search);
+        displayResults(params);
+    }
 });
