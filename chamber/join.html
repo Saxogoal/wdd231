@@ -12,7 +12,8 @@
     <link rel="canonical" href="https://saxogoal.github.io/wdd231/chamber/join.html">
 
     <meta property="og:title" content="Join Us | São Paulo Chamber of Commerce">
-    <meta property="og:description" content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
+    <meta property="og:description"
+        content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
     <meta property="og:image" content="https://saxogoal.github.io/wdd231/chamber/images/spflag.webp">
     <meta property="og:url" content="https://saxogoal.github.io/wdd231/chamber/join.html">
     <meta property="og:type" content="website">
@@ -20,7 +21,8 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Join Us | São Paulo Chamber of Commerce">
-    <meta name="twitter:description" content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
+    <meta name="twitter:description"
+        content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
     <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/chamber/images/spflag.webp">
 
     <link rel="icon" href="images/favicon.ico">
@@ -40,8 +42,10 @@
     <link rel="stylesheet" href="styles/spcc-large.css">
 
     <script src="scripts/common.js" defer></script>
-    <script type="module" src="scripts/business.js"></script>
+    <script type="module" src="scripts/join.js"></script>
 </head>
+
+<body>
     <header>
         <div class="header-top">
             <a href="index.html" class="nav-logo" aria-label="São Paulo Chamber of Commerce Home">
@@ -53,7 +57,8 @@
             </a>
             <p class="site-title">São Paulo Chamber of Commerce</p>
             <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"></button>
+                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="navLinks"></button>
             </nav>
         </div>
         <div class="nav-links" id="navLinks">
@@ -66,8 +71,166 @@
         </div>
     </header>
     <main>
+        <section class="hero-image-section" aria-label="Hero">
+            <picture id="heroImage">
+                <img src="images/join-us.webp" alt="São Paulo cityscape" width="1000" height="400" fetchpriority="high">
+            </picture>
+        </section>
+        <h1 class="page-heading">Join Us</h1>
 
+        <div class="grid-container">
+            <fieldset>
+                <form method="GET" action="thankyou.html" class="join-form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Your First Name"
+                            title="Your First Name" autocomplete="given-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Your Last Name"
+                            title="Your Last Name" autocomplete="family-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Organizational Title</label>
+                        <input type="text" id="title" name="title" required placeholder="Your Organizational Title"
+                            title="Please use only letters, hyphens, and spaces (minimum 7 characters)." autocomplete="organization-title"
+                            pattern="^[A-Za-z\s\-]{7,}$">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your Email Address"
+                            title="Your Email Address" autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number"
+                            title="Your Phone Number" autocomplete="tel">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="business">Business Name</label>
+                        <input type="text" id="business" name="business" required placeholder="Your Business Name"
+                            title="Your Business Name" autocomplete="organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="membership">Membership Value</label>
+                        <select id="membership" name="membership" required>
+                            <option value="">Select a Membership Option</option>
+                            <option value="np">Non-Profit Membership</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Organization Description</label>
+                        <textarea id="description" name="description"
+                            placeholder="Brief description of your organization" title="Organization Description"
+                            rows="6" cols="50"></textarea>
+                    </div>
+
+                    <label for="timestamp" class="sr-only">Joining Date & Time</label>
+                    <input type="hidden" id="timestamp" name="timestamp" required>
+                    <button type="submit" class="cta-button">Join Now</button>
+                </form>
+            </fieldset>
+
+            <section class="membership-section" aria-label="Membership Benefit Levels">
+                <h1 class="page-heading">Membership Benefits</h1>
+                <div class="card">
+                    <h3>Bronze Level</h3>
+                    <p>Ideal for emerging startups establishing local market footprints.</p>
+                    <button type="button" class="view-button" data-modal="modal-np">View Benefits &rarr;</button>
+                </div>
+
+                <div class="card">
+                    <h3>Silver Level</h3>
+                    <p>Great for expanding groups aiming for advanced promotional advantages.</p>
+                    <button type="button" class="view-button" data-modal="modal-bronze">View Benefits &rarr;</button>
+                </div>
+
+                <div class="card">
+                    <h3>Gold Level</h3>
+                    <p>Premium placement tier ensuring ultimate homepage spotlight exposure.</p>
+                    <button type="button" class="view-button" data-modal="modal-silver">View Benefits &rarr;</button>
+                </div>
+
+                <div class="card">
+                    <h3>Non-Profit Level</h3>
+                    <p>Designed for registered charities and community action groups.</p>
+                    <button type="button" class="view-button" data-modal="modal-gold">View Benefits &rarr;</button>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <dialog id="modal-np" class="card">
+        <div class="modal-header">
+            <h2>Non-Profit Benefits</h2>
+            <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Cost: Free (Verification Required)</strong></p>
+            <ul>
+                <li>Standard directory listing format.</li>
+                <li>Access to community networking mixers.</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="modal-bronze" class="card">
+        <div class="modal-header">
+            <h2>Bronze Benefits</h2>
+            <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Cost: R$ 150 / Month</strong></p>
+            <ul>
+                <li>Directory inclusion featuring automated web links.</li>
+                <li>10% discount profile for training workshops.</li>
+                <li>Access to monthly after-hours mixers.</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="modal-silver" class="card">
+        <div class="modal-header">
+            <h2>Silver Benefits</h2>
+            <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Cost: R$ 400 / Month</strong></p>
+            <ul>
+                <li>All active Bronze membership privileges included.</li>
+                <li>25% discount across training events and seminars.</li>
+                <li>Rotating homepage member spotlight positioning rules.</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="modal-gold" class="card">
+        <div class="modal-header">
+            <h2>Gold Benefits</h2>
+            <button type="button" class="modal-close" aria-label="Close dialog">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p><strong>Cost: R$ 850 / Month</strong></p>
+            <ul>
+                <li>All active Silver membership privileges included.</li>
+                <li>100% complete fee waiver for professional training workshops.</li>
+                <li>Permanent home screen banner spotlight slots.</li>
+                <li>VIP seating configurations at the annual award banquet gala.</li>
+            </ul>
+        </div>
+    </dialog>
+
     <footer>
         <div class="footer-left">
             <p>São Paulo Chamber of Commerce</p>
@@ -96,7 +259,6 @@
             <p>Last Modified: <span id="lastModified"></span></p>
         </div>
     </footer>
-    
 </body>
-    
+
 </html>
