@@ -1,16 +1,38 @@
-/* ==========================================
-   GLOBAL RESPONSIVE STYLES
-========================================== */
+/* =========================
+   480px
+========================= */
 
-@media only screen and (min-width: 480px) {
-
+@media (min-width: 480px) {
     .cta-button {
         width: auto;
     }
+
+    .filter-controls {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-@media only screen and (min-width: 768px) {
+/* =========================
+   640px
+========================= */
 
+@media (min-width: 640px) {
+    .hero {
+        padding: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+/* =========================
+   768px (ALL combined)
+========================= */
+
+@media (min-width: 768px) {
+
+    /* navigation */
     #menu {
         display: none;
     }
@@ -28,21 +50,24 @@
         border-radius: 4px;
     }
 
+    .nav-logo img {
+        width: 8rem;
+    }
+
+    /* layout */
     main {
         padding: 0 2rem;
     }
 
-    .nav-logo img {
-        width: 8rem;
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
     }
-}
 
-/* ==========================================
-   HOME PAGE (index.html)
-========================================== */
+    .full-width {
+        grid-column: 1 / -1;
+    }
 
-@media only screen and (min-width: 768px) {
-
+    /* home page */
     .info-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -52,41 +77,11 @@
     }
 }
 
-/* ==========================================
-   DIRECTORY PAGE (directory.html)
-========================================== */
+/* =========================
+   1024px
+========================= */
 
-@media only screen and (min-width: 480px) {
-
-    .filter-controls {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media only screen and (min-width: 640px) {
-
-    .hero {
-        padding: 2rem;
-    }
-
-    .card {
-        padding: 1.5rem;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .full-width {
-        grid-column: 1 / -1;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-
+@media (min-width: 1024px) {
     .hero {
         padding: 2.5rem 3rem;
     }
