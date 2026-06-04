@@ -1,0 +1,17 @@
+/* =========================================================
+   📊 DIRECTORY (PAGE-SPECIFIC)
+========================================================= */
+
+#membersContainer.grid-view {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+#membersContainer.list-view {
+    gap: 1rem;
+    flex-direction: column;
+}
+
+#membersContainer.list-view img {
+    display: none;
+}

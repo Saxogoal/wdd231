@@ -1,0 +1,35 @@
+/* =========================================================
+   🌤️ WEATHER & EVENTS (HOME PAGE)
+========================================================= */
+
+.tag-list,
+.accent-list,
+.forecast-list {
+    list-style: none;
+}
+
+.tag-list {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag-list li {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    border: 1px solid var(--primary);
+    font-size: 0.75rem;
+}
+
+/* =========================================================
+   🏠 HOME PAGE
+========================================================= */
+
+.grid-container {
+    gap: 2rem;
+}
+
+.members-home {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+}

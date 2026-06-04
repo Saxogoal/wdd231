@@ -1,26 +1,11 @@
+/* ==========================================
+   GLOBAL RESPONSIVE STYLES
+========================================== */
+
 @media only screen and (min-width: 480px) {
 
     .cta-button {
         width: auto;
-    }
-
-    .filter-controls {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media only screen and (min-width: 640px) {
-
-    .form-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .hero {
-        padding: 2rem;
-    }
-
-    .card {
-        padding: 1.5rem;
     }
 }
 
@@ -33,25 +18,14 @@
     .nav-links {
         display: flex;
         flex-direction: row;
-
         justify-content: center;
-
         gap: 0.5rem;
-
         padding: 0.5rem 1rem;
     }
 
     .nav-links a {
         border-bottom: none;
         border-radius: 4px;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .full-width {
-        grid-column: 1 / -1;
     }
 
     main {
@@ -63,21 +37,57 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
+/* ==========================================
+   HOME PAGE (index.html)
+========================================== */
 
-    .hero {
-        padding: 2.5rem 3rem;
-    }
-}
-
-/* ── Home page — desktop overrides ─────────── */
 @media only screen and (min-width: 768px) {
 
     .info-grid {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .members-home {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==========================================
+   DIRECTORY PAGE (directory.html)
+========================================== */
+
+@media only screen and (min-width: 480px) {
+
+    .filter-controls {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (min-width: 640px) {
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .hero {
+        padding: 2.5rem 3rem;
     }
 }

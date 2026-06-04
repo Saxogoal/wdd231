@@ -593,7 +593,6 @@ footer {
     margin-top: 2rem;
     padding: 1.5rem 0.5rem;
     justify-content: space-between;
-    gap: 1rem;
 }
 
 .footer-left,
@@ -621,13 +620,8 @@ footer a img:hover {
 footer p {
     margin: 0.5rem 0;
 }
+
 /* ───────── JOIN PAGE ───────── */
-
-.grid-container {
-    display: grid;
-    gap: 2rem;
-}
-
 fieldset {
     border: none;
     background: #fff;
@@ -681,7 +675,6 @@ fieldset {
 }
 
 /* Membership cards */
-
 .membership-section {
     display: flex;
     flex-direction: column;
@@ -689,8 +682,7 @@ fieldset {
 }
 
 .membership-section .card {
-    transition: transform .25s ease,
-        box-shadow .25s ease;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .membership-section .card:hover {
@@ -708,7 +700,6 @@ fieldset {
 }
 
 /* Membership colors */
-
 .membership-section .card:nth-of-type(1) {
     border-top-color: #7d7d7d;
 }
@@ -726,7 +717,6 @@ fieldset {
 }
 
 /* ───────── MODALS ───────── */
-
 dialog.card {
     max-width: 550px;
     width: 90%;
@@ -775,7 +765,6 @@ dialog::backdrop {
 }
 
 /* ───────── THANK YOU PAGE ───────── */
-
 .thankyou-section {
     max-width: 800px;
     margin: 0 auto 2rem;
