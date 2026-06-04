@@ -27,7 +27,7 @@ body {
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    text-rendering: auto;
 }
 
 img {
@@ -263,6 +263,7 @@ main {
 .hero-image-section img {
     height: clamp(180px, 40vw, 400px);
     object-fit: cover;
+    aspect-ratio: 1000 / 400;
 }
 
 .hero-cta {
@@ -355,6 +356,7 @@ main {
 .card {
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
+    contain: layout paint;
 }
 
 .card {
@@ -378,6 +380,7 @@ main {
 .member-card img {
     height: 300px;
     object-fit: cover;
+    aspect-ratio: 4 / 3;
 }
 
 .member-content,
@@ -684,6 +687,7 @@ fieldset {
 
 .membership-section .card {
     transition: transform .25s ease, box-shadow .25s ease;
+    will-change: transform;
 }
 
 .membership-section .card:hover {
