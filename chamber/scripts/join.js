@@ -1,48 +1,40 @@
-import { displayResults } from "./utilities.js";
+// join-form.js
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Set hidden timestamp when form loads
+    // timestamp only needed on join page
     const hiddenTimestamp = document.getElementById("timestamp");
     if (hiddenTimestamp) {
         hiddenTimestamp.value = new Date().toISOString();
     }
 
-    // Modal open buttons
+    // modal buttons
     document.querySelectorAll(".view-button[data-modal]").forEach(btn => {
         btn.addEventListener("click", () => {
-            const targetModal = document.getElementById(btn.getAttribute("data-modal"));
-            if (targetModal) targetModal.showModal();
+            const modal = document.getElementById(btn.dataset.modal);
+            if (modal) modal.showModal();
         });
     });
 
-    // Modal close buttons
+    // close buttons
     document.querySelectorAll(".modal-close").forEach(btn => {
         btn.addEventListener("click", () => {
-            const dialog = btn.closest("dialog");
-            if (dialog) dialog.close();
+            btn.closest("dialog")?.close();
         });
     });
 
-    // Close modal when clicking on backdrop
+    // backdrop close
     document.querySelectorAll("dialog.card").forEach(dialog => {
         dialog.addEventListener("click", (e) => {
-            const rect = dialog.getBoundingClientRect();
+            const r = dialog.getBoundingClientRect();
             if (
-                e.clientX < rect.left ||
-                e.clientX > rect.right ||
-                e.clientY < rect.top ||
-                e.clientY > rect.bottom
+                e.clientX < r.left ||
+                e.clientX > r.right ||
+                e.clientY < r.top ||
+                e.clientY > r.bottom
             ) {
                 dialog.close();
             }
         });
     });
-
-    // Display results on thankyou.html
-    const resultsDiv = document.getElementById("results");
-    if (resultsDiv) {
-        const params = new URLSearchParams(window.location.search);
-        displayResults(params);
-    }
 });
