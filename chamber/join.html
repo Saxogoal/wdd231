@@ -11,6 +11,7 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://saxogoal.github.io/wdd231/chamber/join.html">
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Join Us | São Paulo Chamber of Commerce">
     <meta property="og:description"
         content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
@@ -19,39 +20,51 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Join Us | São Paulo Chamber of Commerce">
     <meta name="twitter:description"
         content="Join the São Paulo Chamber of Commerce to connect with local businesses and access valuable resources in São Paulo.">
     <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/chamber/images/spflag.webp">
 
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="preload" as="image" href="images/spflag-256.webp">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- PERFORMANCE: preconnect before font request -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- PERFORMANCE: preload LCP image (the hero and logo) -->
+    <link rel="preload" as="image" href="images/spflag-256.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/join-us.webp" fetchpriority="high">
+
+    <!-- PERFORMANCE: load fonts non-blocking -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap">
     </noscript>
 
     <link rel="stylesheet" href="styles/spcc.css">
     <link rel="stylesheet" href="styles/spcc-large.css">
 
+    <!-- PERFORMANCE: defer non-critical JS, type=module is deferred by default -->
     <script src="scripts/common.js" defer></script>
-    <script type="module" src="scripts/join.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-top">
             <a href="index.html" class="nav-logo" aria-label="São Paulo Chamber of Commerce Home">
+                <!-- PERFORMANCE: explicit width/height prevents CLS -->
                 <picture>
                     <source srcset="images/spflag-256.webp 1x, images/spflag-350.webp 2x" type="image/webp">
                     <img src="images/spflag-256.webp" alt="São Paulo Chamber of Commerce logo" width="128" height="85"
-                        fetchpriority="high" decoding="async">
+                        fetchpriority="high" decoding="sync">
                 </picture>
             </a>
             <p class="site-title">São Paulo Chamber of Commerce</p>
@@ -72,9 +85,11 @@
 
     <main>
         <section class="hero-image-section" aria-label="Hero">
+            <!-- PERFORMANCE: LCP image — eager + high priority, explicit dimensions -->
             <picture id="heroImage">
+                <source srcset="images/join-us.webp" type="image/webp">
                 <img src="images/join-us.webp" alt="São Paulo cityscape" width="1000" height="400" fetchpriority="high"
-                    decoding="async">
+                    loading="eager" decoding="sync">
             </picture>
         </section>
 
@@ -142,7 +157,6 @@
                     </label>
 
                     <input type="hidden" id="timestamp" name="timestamp">
-
                     <input type="submit" class="cta-button" value="Join Now">
                 </form>
             </fieldset>
@@ -178,7 +192,7 @@
         </div>
     </main>
 
-    <!-- MODALS -->
+    <!-- MODALS — placed at end of body to not block rendering -->
     <dialog id="modal-np" class="card">
         <div class="modal-header">
             <h2>NP Membership Benefits</h2>
@@ -250,11 +264,13 @@
             </p>
         </div>
         <div class="footer-center">
+            <!-- PERFORMANCE: lazy load footer icons, they are below the fold -->
             <a href="https://youtube.com" aria-label="Visit our YouTube channel">
                 <img src="images/logo-youtube.svg" alt="YouTube" width="30" height="30" loading="lazy" decoding="async">
             </a>
             <a href="https://www.linkedin.com" aria-label="Visit our LinkedIn page">
-                <img src="images/logo-linkedin.svg" alt="LinkedIn" width="30" height="30" loading="lazy" decoding="async">
+                <img src="images/logo-linkedin.svg" alt="LinkedIn" width="30" height="30" loading="lazy"
+                    decoding="async">
             </a>
             <a href="https://x.com" aria-label="Visit our X profile">
                 <img src="images/twitter-x.svg" alt="X" width="30" height="30" loading="lazy" decoding="async">

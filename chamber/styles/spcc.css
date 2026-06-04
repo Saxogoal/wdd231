@@ -802,3 +802,12 @@ dialog::backdrop {
 .results-list strong {
     color: var(--primary);
 }
+.info-card,
+.member-card,
+.home-member-card,
+.membership-section,
+.thankyou-section,
+footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
