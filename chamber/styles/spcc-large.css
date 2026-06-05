@@ -103,6 +103,42 @@
         /* Forces all cards to have identical width */
         gap: 1.25rem;
     }
+    @media (min-width: 768px) {
+    
+    /* ... Keep all your existing 768px rules above ... */
+
+    /* ── FOOTER DESKTOP POSITIONING FIX ── */
+@media (min-width: 768px) {
+
+        /* ... Keep all your existing 768px rules above ... */
+
+        /* ── FOOTER DESKTOP POSITIONING FIX ── */
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        gap: 2rem;
+    }
+
+    .footer-left {
+        flex: 1;
+    }
+
+    .footer-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-right {
+        flex: 1;
+        text-align: right;
+        /* Aligns textual elements flush to the right margin */
+    }
+}
 
     /* THANK YOU FIX */
     .thankyou-section {
@@ -118,4 +154,4 @@
     .hero {
         padding: 2.5rem 3rem;
     }
-}
+}}
