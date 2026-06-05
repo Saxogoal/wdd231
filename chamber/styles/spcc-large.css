@@ -97,8 +97,10 @@
        rendering 4 parallel columns shrinks them into tiny splinters. 
        A 2-column layout inside the card container scales perfectly on desktop. */
     .membership-section {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        /* Forces all cards to have identical width */
         gap: 1.25rem;
     }
 
