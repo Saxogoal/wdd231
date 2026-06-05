@@ -1,7 +1,5 @@
 /* ========================================================
    480px Breakpoint
-   NOTE: This block is parsed if spcc-large.css is imported
-   without structural link tag 'media' restrictions.
 ========================= */
 @media (min-width: 480px) {
     .cta-button {
@@ -92,35 +90,28 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* JOIN PAGE SPECIFIC GRID FIX:
-       Because .membership-section is inside a 2-column layout parent, 
-       rendering 4 parallel columns shrinks them into tiny splinters. 
-       A 2-column layout inside the card container scales perfectly on desktop. */
+    /* JOIN PAGE SPECIFIC GRID FIX: */
     .membership-section {
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        /* Forces all cards to have identical width */
+        /* Forces all cards to have identical matching width */
         gap: 1.25rem;
     }
-    @media (min-width: 768px) {
-    
-    /* ... Keep all your existing 768px rules above ... */
 
     /* ── FOOTER DESKTOP POSITIONING FIX ── */
-@media (min-width: 768px) {
-
-        /* ... Keep all your existing 768px rules above ... */
-
-        /* ── FOOTER DESKTOP POSITIONING FIX ── */
     footer {
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         text-align: left;
-        gap: 2rem;
     }
+
+    .footer-right {
+        text-align: right;
+        /* Aligns textual elements flush to the right margin on desktop */
+    }
+
     /* THANK YOU FIX */
     .thankyou-section {
         max-width: 800px;
@@ -135,4 +126,4 @@
     .hero {
         padding: 2.5rem 3rem;
     }
-}}}
+}

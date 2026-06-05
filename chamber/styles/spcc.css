@@ -224,6 +224,8 @@ main {
     padding: 0.75rem 1rem;
 }
 
+/* ... Keep all reset, typography, header, and main card styles exactly as they are ... */
+
 /* ── Footer Elements ── */
 footer {
     background-color: var(--primary);
@@ -231,25 +233,25 @@ footer {
     margin-top: 2rem;
     padding: 1.5rem 1rem;
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+    flex-direction: column;
+    /* Stacked vertically on mobile layout profiles */
+    gap: 1.5rem;
+    text-align: center;
+    /* Centered default presentation for smaller views */
 }
-.footer-left {
-    flex: 1;
-}
-    
-    
+
+.footer-left,
+.footer-center,
 .footer-right {
     flex: 1;
-    text-align: right;
-    /* Aligns textual elements flush to the right margin */
 }
-        
+
+.footer-right {
+    /* Stays normalized on mobile; overridden to 'right' in large breakpoint file */
+    text-align: center;
+}
+
 .footer-center {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
