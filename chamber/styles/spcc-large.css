@@ -25,9 +25,7 @@
         padding: 2rem;
     }
 
-    .card {
-        padding: 1.5rem;
-    }
+    /* FIXED: Duplicate .card selector removed from here */
 
     /* Give the form layout more breathing room */
     fieldset {
@@ -109,7 +107,7 @@
 
     .footer-right {
         text-align: right;
-        /* Aligns textual elements flush to the right margin on desktop */
+        /* Aligns elements flush to the right margin on desktop */
     }
 
     /* THANK YOU FIX */
