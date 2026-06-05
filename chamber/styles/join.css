@@ -1,4 +1,28 @@
-/* ───────── JOIN FORM ───────── */
+/* ── Hero Element ── */
+.hero-image-section {
+    position: relative;
+    margin-bottom: 1.5rem;
+    background-color: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hero-image-section img {
+    height: clamp(180px, 40vw, 400px);
+    object-fit: cover;
+    aspect-ratio: 1000 / 400;
+}
+
+/* ── Common Card Styling ── */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(27, 58, 107, 0.07);
+    border-top: 3px solid var(--primary);
+    padding: 1rem;
+}
+
+/* ── Join Form Structure ── */
 fieldset {
     border: none;
     background: #fff;
@@ -51,18 +75,15 @@ fieldset {
     margin-top: .5rem;
 }
 
-/* ───────── MEMBERSHIP CARDS ───────── */
+/* ── Membership Tier Configurations ── */
 .membership-section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    content-visibility: auto;
-    contain-intrinsic-size: 500px;
 }
 
 .membership-section .card {
     transition: transform .25s ease, box-shadow .25s ease;
-    will-change: transform;
 }
 
 .membership-section .card:hover {
@@ -95,7 +116,7 @@ fieldset {
     border-top-color: #ffd700;
 }
 
-/* ───────── MODALS ───────── */
+/* ── Dialog Modals ── */
 dialog.card {
     max-width: 550px;
     width: 90%;
@@ -141,44 +162,4 @@ dialog::backdrop {
 
 .modal-body li+li {
     margin-top: .5rem;
-}
-
-/* ───────── THANK YOU PAGE ───────── */
-.thankyou-section {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    padding: 2rem;
-    text-align: center;
-    content-visibility: auto;
-    contain-intrinsic-size: 500px;
-}
-
-.thankyou-section h2 {
-    margin: 2rem 0 1rem;
-}
-
-.thankyou-section p {
-    margin-bottom: 1rem;
-}
-
-#results {
-    margin-top: 1.5rem;
-}
-
-.results-list {
-    list-style: none;
-    display: grid;
-    gap: .75rem;
-    text-align: left;
-}
-
-.results-list li {
-    padding: .85rem 1rem;
-    background: var(--surface);
-    border-left: 4px solid var(--primary);
-    border-radius: 6px;
-}
-
-.results-list strong {
-    color: var(--primary);
 }

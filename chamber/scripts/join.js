@@ -1,29 +1,50 @@
-// join.js — no DOMContentLoaded wrapper needed with type="module"
+// join.js
+// Optimized with Event Delegation and BFCache preservation hooks
 
-// Set hidden timestamp immediately
-const hiddenTimestamp = document.getElementById("timestamp");
-if (hiddenTimestamp) {
-    hiddenTimestamp.value = new Date().toISOString();
-}
+window.addEventListener('pageshow', (event) => {
+    const populateTimestamp = () => {
+        const hiddenTimestamp = document.getElementById("timestamp");
+        if (hiddenTimestamp) {
+            hiddenTimestamp.value = new Date().toISOString();
+        }
+    };
 
-// Open modals
-document.querySelectorAll(".view-button[data-modal]").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const modal = document.getElementById(btn.dataset.modal);
+    // Safely defer execution based on page cache persistence markers
+    if (event.persisted) {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(populateTimestamp);
+        } else {
+            setTimeout(populateTimestamp, 0);
+        }
+    } else {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(populateTimestamp);
+        } else {
+            window.addEventListener('load', populateTimestamp);
+        }
+    }
+});
+
+// Event Delegation: Zero loops running on startup
+document.addEventListener("click", (e) => {
+    // 1. Open Dialog Modals
+    const viewBtn = e.target.closest(".view-button[data-modal]");
+    if (viewBtn) {
+        const modal = document.getElementById(viewBtn.dataset.modal);
         if (modal) modal.showModal();
-    });
-});
+        return;
+    }
 
-// Close via X button
-document.querySelectorAll(".modal-close").forEach(btn => {
-    btn.addEventListener("click", () => {
-        btn.closest("dialog")?.close();
-    });
-});
+    // 2. Close via Close Button
+    const closeBtn = e.target.closest(".modal-close");
+    if (closeBtn) {
+        closeBtn.closest("dialog")?.close();
+        return;
+    }
 
-// Close via backdrop click
-document.querySelectorAll("dialog.card").forEach(dialog => {
-    dialog.addEventListener("click", (e) => {
+    // 3. Close via Dialog Backdrop Click
+    const dialog = e.target.closest("dialog.card");
+    if (dialog && e.target === dialog) {
         const r = dialog.getBoundingClientRect();
         if (
             e.clientX < r.left || e.clientX > r.right ||
@@ -31,5 +52,5 @@ document.querySelectorAll("dialog.card").forEach(dialog => {
         ) {
             dialog.close();
         }
-    });
+    }
 });
