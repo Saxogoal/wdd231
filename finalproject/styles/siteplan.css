@@ -82,5 +82,4 @@ section {
 .wireframes img {
     width: 70rem;
     height: auto;
-    border: 2px solid var(--secondary);
 }
