@@ -24,6 +24,13 @@
     .hero {
         padding: 2rem;
     }
+    #placesContainer {
+        grid-template-areas:
+        "photo name"
+        "photo industry cost"
+        "photo description"
+        "photo address";
+    }
     fieldset {
         padding: 2rem;
     }

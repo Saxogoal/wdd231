@@ -4,9 +4,9 @@
     grid-template-areas:
     "name"
     "photo"
-    "industry , cost"
+    "industry  cost"
     "description"
-    "location";
+    "address";
 }
 .place-card {
     background-color: white;
