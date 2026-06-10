@@ -7,7 +7,7 @@ export const places = [
         "description": "Brazilian restaurant known for contemporary cuisine and locally sourced ingredients.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/capim.webp"
+        "photoUrl": "images/capim.webp"
     },
     {
         "id": 2,
@@ -17,7 +17,7 @@ export const places = [
         "description": "Large independent bookstore offering a wide selection of books in Portuguese and other languages.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/martins-fontes.webp"
+        "photoUrl": "images/martins-fontes.webp"
     },
     {
         "id": 3,
@@ -27,7 +27,7 @@ export const places = [
         "description": "Flexible coworking environment for entrepreneurs, startups, and remote professionals.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/i-spaces.webp"
+        "photoUrl": "images/i-spaces.webp"
     },
     {
         "id": 4,
@@ -37,7 +37,7 @@ export const places = [
         "description": "Specialty coffee shop recognized for artisan roasting and premium brewing techniques.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/coffee-lab.webp"
+        "photoUrl": "images/coffee-lab.webp"
     },
     {
         "id": 5,
@@ -47,7 +47,7 @@ export const places = [
         "description": "Luxury hotel serving business and leisure travelers in São Paulo's financial district.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/hilton.webp"
+        "photoUrl": "images/hilton.webp"
     },
     {
         "id": 6,
@@ -57,46 +57,26 @@ export const places = [
         "description": "Major cultural venue featuring exhibitions, libraries, performances, and educational activities.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/cultural.webp"
+        "photoUrl": "images/cultural.webp"
     },
     {
         "id": 7,
-        "name": "CT Miami",
-        "industry": "Fitness Center",
-        "address": "Av. Nove de Julho, 585, Bela Vista, São Paulo, SP",
-        "description": "Premium fitness facility offering personal training and wellness programs.",
-        "width": 300,
-        "height": 200,
-        "photoUrl": "../images/ct-miami.webp"
-    },
-    {
-        "id": 8,
-        "name": "Thoughtworks Brazil",
-        "industry": "Software Company",
-        "address": "Av. Paulista, 2300, Bela Vista, São Paulo, SP",
-        "description": "Global software consultancy focused on digital transformation, software engineering, and technology strategy.",
-        "width": 300,
-        "height": 200,
-        "photoUrl": "../images/thought.webp"
-    },
-    {
-        "id": 9,
         "name": "Shopping Cidade São Paulo",
         "industry": "Shopping Center",
         "address": "Av. Paulista, 1230, Bela Vista, São Paulo, SP",
         "description": "Modern shopping mall featuring retail stores, restaurants, and entertainment venues.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/cidade-sp.webp"
+        "photoUrl": "images/cidade-sp.webp"
     },
     {
-        "id": 10,
+        "id": 8,
         "name": "Mercado Municipal de São Paulo",
         "industry": "Public Market",
         "address": "Rua da Cantareira, 306, Centro Histórico, São Paulo, SP",
         "description": "Historic market famous for gourmet foods, fresh produce, and traditional São Paulo culinary experiences.",
         "width": 300,
         "height": 200,
-        "photoUrl": "../images/mercadao.webp"
+        "photoUrl": "images/mercadao.webp"
     }
 ]

@@ -1,12 +1,15 @@
-//specific discover page scripts
+// specific discover page scripts
 import { places } from "../data/places.mjs";
 import { getResponsivePaths } from "./utilities.js";
 
 const placesContainer = document.querySelector("#placesContainer");
 
 function displayPlaces(places) {
+    // Prevent errors if the container doesn't exist on the current page
+    if (!placesContainer) return;
+
     // Keep the sr-only heading in the container when clearing out old members
-    placesContainer.innerHTML = '<h2 class="sr-only">Places Listings</h2>';
+    placesContainer.innerHTML = '<h1 class="sr-only">Places Listings</h1>';
 
     // Create DocumentFragment for performance optimization
     const fragment = document.createDocumentFragment();
@@ -17,27 +20,22 @@ function displayPlaces(places) {
 
         const { src1x, src2x } = getResponsivePaths(place.photoUrl);
 
-        card.innerHTML = `
-            <picture>
-                <source
-                    type="image/webp"
-                    srcset="${src1x} 1x, ${src2x} 2x">
+        card.innerHTML = ` 
+        <h2 class="card-title-top">${place.name}</h2>
+            <figure>
                 <img
-                    src="${src1x}"
+                    src="${place.photoUrl}"
                     alt="${place.name}"
                     loading="lazy"
                     decoding="async"
                     width="${place.width}"
                     height="${place.height}">
-            </picture>
+            </figure>
 
             <div class="place-content">
-                <h3>${place.name}</h3>
-                <p><strong>Address:</strong> ${place.address}</p>
-                <p><strong>Phone:</strong> ${place.phone}</p>
-                <p><strong>Industry:</strong> ${place.industry}</p>
-                <p>${place.description}</p>
-                <p><strong>Cost:</strong> ${place.cost}</p>
+                <p class="card-info"><strong>Address:</strong> ${place.address}</p>
+                <p class="card-info"><strong>Industry:</strong> ${place.industry}</p>
+                <p class="card-info">${place.description}</p>
                 <a href="${place.photoUrl}" target="_blank" rel="noopener noreferrer">
                     View Photo
                 </a>
@@ -50,3 +48,5 @@ function displayPlaces(places) {
     // Append fragment all at once
     placesContainer.appendChild(fragment);
 }
+
+displayPlaces(places);

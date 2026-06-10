@@ -21,7 +21,7 @@
    640px Breakpoint
 ========================= */
 @media only screen and (min-width: 38rem) {
-    .hero {
+    .hero, .hero-secondary {
         padding: 2rem;
     }
     #placesContainer {
