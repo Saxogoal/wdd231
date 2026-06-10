@@ -27,7 +27,7 @@
     #placesContainer {
         grid-template-areas:
         "photo name"
-        "photo industry cost"
+        "photo industry"
         "photo description"
         "photo address";
     }
