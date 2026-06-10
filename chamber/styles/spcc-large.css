@@ -1,7 +1,7 @@
 /* ========================================================
    480px Breakpoint
 ========================= */
-@media (min-width: 480px) {
+@media only screen and (min-width: 30rem) {
     .cta-button {
         width: auto;
     }
@@ -20,14 +20,10 @@
 /* ========================================================
    640px Breakpoint
 ========================= */
-@media (min-width: 640px) {
+@media only screen and (min-width: 38rem) {
     .hero {
         padding: 2rem;
     }
-
-    /* FIXED: Duplicate .card selector removed from here */
-
-    /* Give the form layout more breathing room */
     fieldset {
         padding: 2rem;
     }
@@ -36,7 +32,7 @@
 /* ========================================================
    768px Breakpoint (MAIN DESKTOP ENTRY POINT)
 ========================= */
-@media (min-width: 768px) {
+@media only screen and (min-width: 48rem) {
 
     /* NAV FIX (NO CLS) */
     #menu {
@@ -120,7 +116,7 @@
 /* ========================================================
    1024px Breakpoint
 ========================= */
-@media (min-width: 1024px) {
+@media only screen and (min-width: 64rem) {
     .hero {
         padding: 2.5rem 3rem;
     }
