@@ -1,5 +1,5 @@
 //specific discover page scripts
-import { places } from "./places.mjs";
+import { places } from "../data/places.mjs";
 import { getResponsivePaths } from "./utilities.js";
 
 const placesContainer = document.querySelector("#placesContainer");

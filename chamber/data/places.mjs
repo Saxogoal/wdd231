@@ -8,7 +8,7 @@ export const places = [
         "description": "Brazilian restaurant known for contemporary cuisine and locally sourced ingredients.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Restaurante+Capim+Santo+Sao+Paulo"
+        "photoUrl": "../images/capim.webp"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@ export const places = [
         "description": "Large independent bookstore offering a wide selection of books in Portuguese and other languages.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Livraria+Martins+Fontes+Sao+Paulo"
+        "photoUrl": "../images/martins-fontes.webp"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@ export const places = [
         "description": "Flexible coworking environment for entrepreneurs, startups, and remote professionals.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=iSpaces+Coworking+Sao+Paulo"
+        "photoUrl": "../images/i-spaces.webp"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@ export const places = [
         "description": "Specialty coffee shop recognized for artisan roasting and premium brewing techniques.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Coffee+Lab+Sao+Paulo"
+        "photoUrl": "../images/coffee-lab.webp"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@ export const places = [
         "description": "Luxury hotel serving business and leisure travelers in São Paulo's financial district.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Hilton+Sao+Paulo+Morumbi"
+        "photoUrl": "../images/hilton.webp"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@ export const places = [
         "description": "Major cultural venue featuring exhibitions, libraries, performances, and educational activities.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Centro+Cultural+Sao+Paulo"
+        "photoUrl": "../images/cultural.webp"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@ export const places = [
         "description": "Premium fitness facility offering personal training and wellness programs.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=CT+Miami+Sao+Paulo"
+        "photoUrl": "../images/ct-miami.webp"
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@ export const places = [
         "description": "Global software consultancy focused on digital transformation, software engineering, and technology strategy.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Thoughtworks+Brazil+Sao+Paulo"
+        "photoUrl": "../images/thought.webp"
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@ export const places = [
         "description": "Modern shopping mall featuring retail stores, restaurants, and entertainment venues.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Shopping+Cidade+Sao+Paulo"
+        "photoUrl": "../images/cidade-sp.webp"
     },
     {
         "id": 10,
@@ -107,6 +107,6 @@ export const places = [
         "description": "Historic market famous for gourmet foods, fresh produce, and traditional São Paulo culinary experiences.",
         "width": 300,
         "height": 200,
-        "photoUrl": "https://maps.google.com/?q=Mercado+Municipal+de+Sao+Paulo"
+        "photoUrl": "../images/mercadao.webp"
     }
 ]
