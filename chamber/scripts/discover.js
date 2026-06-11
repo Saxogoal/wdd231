@@ -41,9 +41,13 @@ function displayPlaces(placesList) {
 
     const fragment = document.createDocumentFragment();
 
-    placesList.forEach((place) => {
+    placesList.forEach((place, index) => {
         const card = document.createElement("article");
         card.classList.add("place-card");
+
+        // First card image: eager + high priority for LCP. Rest: lazy.
+        const isFirst = index === 0;
+        const loadAttr = isFirst ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
 
         card.innerHTML = `
             <h2 class="card-title-top">${place.name}</h2>
@@ -51,11 +55,10 @@ function displayPlaces(placesList) {
                 <img
                     src="${place.photoUrl}"
                     alt="${place.name}"
-                    loading="lazy"
-                    fetchpriority="high"
+                    ${loadAttr}
                     decoding="async"
-                    width="300" 
-                    height="200">
+                    width="${places.width}"
+                    height="${places.height}">
             </figure>
             <div class="place-content">
                 <address>${place.address}</address>
