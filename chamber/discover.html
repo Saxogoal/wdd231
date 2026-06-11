@@ -31,10 +31,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preload" as="image" href="images/join-us-small.webp" media="(max-width: 480px)" fetchpriority="high">
-    <link rel="preload" as="image" href="images/join-us.webp" media="(min-width: 481px)" fetchpriority="high">
-
-
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
         media="print" onload="this.media='all'">
@@ -45,12 +41,12 @@
 
     <link rel="stylesheet" href="styles/spcc.css">
     <link rel="stylesheet" href="styles/discover.css">
-    <link rel="stylesheet" href="styles/spcc-medium.css">
     <link rel="stylesheet" href="styles/spcc-large.css">
 
     <script src="scripts/common.js" defer></script>
     <script src="scripts/discover.js" type="module"></script>
 </head>
+
 <body>
     <header>
         <div class="header-top">
@@ -76,22 +72,30 @@
             <a href="events.html">Events</a>
         </div>
     </header>
+
     <main>
         <section class="hero">
             <h1>Discover São Paulo</h1>
-            <p>São Paulo is a vibrant city that mixes outdoor access, family attractions, and local businesses. This page
-            highlights a few key places that make the area a great place to live, visit, and build a business.</p>
+            <p>São Paulo is a vibrant city that mixes outdoor access, family attractions, and local businesses. This
+                page highlights a few key places that make the area a great place to live, visit, and build a
+                business.</p>
         </section>
+
         <section class="hero hero-secondary">
             <h1>Explore São Paulo</h1>
             <p>Whether you're a local resident, a visitor, or a business owner, São Paulo has something to offer. From
                 cultural landmarks to thriving business districts, the city is full of opportunities to discover and
                 connect.</p>
         </section>
+
+        <!-- Visitor message injected by JS -->
+        <p id="visitor-message" aria-live="polite"></p>
+
         <section id="placesContainer" aria-label="Discover listings">
-            <h1 class="sr-only">Discover Listings</h1>
+            <h1 class="sr-only">Places Listings</h1>
         </section>
     </main>
+
     <footer>
         <div class="footer-left">
             <p>São Paulo Chamber of Commerce</p>

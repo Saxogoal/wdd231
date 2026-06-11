@@ -1,30 +1,58 @@
-#placesContainer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
-    padding: 1rem 0;
+/* ── Discover Page ── */
+
+/* Hero sections */
+.hero {
+    border-bottom: 1px solid var(--primary);
+    gap: 1rem;
 }
 
-#placesContainer h2 {
-    position: absolute;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-}
 .hero.hero-secondary {
     border-bottom: none;
 }
+
 .hero.hero-secondary h1 {
     margin: 0;
     box-sizing: border-box;
     font-size: 1.5rem;
 }
-.hero{
-    border-bottom: 1px solid var(--primary);
-    gap: 1rem;
+
+/* Visitor message banner */
+#visitor-message {
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: 600;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-size: 0.95rem;
 }
+
+/* ── Places Grid Container ── */
+#placesContainer {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem 0;
+
+    /* Small screens (default/mobile): single column, named areas stacked */
+    grid-template-columns: 1fr;
+}
+
+/* sr-only heading inside container */
+#placesContainer>h1 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── Place Card ── */
+/* SMALL (default): stacked — name on top, photo, then content */
 .place-card {
     background-color: white;
     border-radius: 12px;
@@ -32,59 +60,87 @@
     overflow: hidden;
     contain: layout paint;
     content-visibility: auto;
-    contain-intrinsic-size: 500px;
+    contain-intrinsic-size: 320px;
+
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas:
         "card-name"
         "card-photo"
         "card-info";
 }
+
+/* Title — grid-area card-name */
 .place-card .card-title-top {
     grid-area: card-name;
     display: block;
-    color: var(--primary) !important;
+    color: var(--primary);
     font-family: var(--heading-font);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin: 0;
-    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
-    /* Espaçamento elegante em volta do título */
-}
-.place-card figure {
-    grid-area: card-photo;
-    padding: 1rem;
-}
-.place-card .place-content .card-info {
-    grid-area: card-info;
-    padding: 0 1rem 1rem;
-    font-size: 0.95rem;
-}
-.place-card .place-content {
-    grid-area: card-info;
-    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.25rem 1.25rem 0.5rem;
 }
 
+/* Figure — grid-area card-photo */
+.place-card figure {
+    grid-area: card-photo;
+    margin: 0;
+    padding: 0 1rem;
+}
+
+/* Update this block inside discover.css */
 .place-card img {
     display: block;
     width: 300px;
+    /* Changed to 100% so it fits dynamically in the grid */
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.place-card .place-content h3 {
-    margin-bottom: 0.75rem;
-    color: var(--primary);
+/* Content area — grid-area card-info */
+.place-card .place-content {
+    grid-area: card-info;
+    padding: 1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
 
-.place-card .place-content p {
-    margin-bottom: 0.5rem;
+.place-card .place-content .card-info {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-soft);
 }
 
-.place-card .place-content a {
-    color: var(--primary);
-    font-weight: 700;
+/* Address tag */
+.place-card address {
+    font-style: normal;
+    font-size: 0.9rem;
+    color: var(--text-soft);
+}
+
+/* Learn More button */
+.place-card .learn-more-btn {
     display: inline-block;
     margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    align-self: flex-start;
+    min-height: 44px;
+}
+
+.place-card .learn-more-btn:hover {
+    background-color: var(--primary-dark);
 }

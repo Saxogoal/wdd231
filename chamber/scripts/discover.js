@@ -1,52 +1,75 @@
-// specific discover page scripts
+// discover.js — module
 import { places } from "../data/places.mjs";
-import { getResponsivePaths } from "./utilities.js";
 
 const placesContainer = document.querySelector("#placesContainer");
 
-function displayPlaces(places) {
-    // Prevent errors if the container doesn't exist on the current page
+/* ── Visitor Message (localStorage) ── */
+function showVisitorMessage() {
+    const msgEl = document.getElementById("visitor-message");
+    if (!msgEl) return;
+
+    const lastVisit = localStorage.getItem("discoverLastVisit");
+    const now = Date.now();
+
+    let message;
+
+    if (!lastVisit) {
+        message = "Welcome! Let us know if you have any questions.";
+    } else {
+        const diffMs = now - Number(lastVisit);
+        const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+        if (diffDays < 1) {
+            message = "Back so soon! Awesome!";
+        } else if (diffDays === 1) {
+            message = "You last visited 1 day ago.";
+        } else {
+            message = `You last visited ${diffDays} days ago.`;
+        }
+    }
+
+    localStorage.setItem("discoverLastVisit", String(now));
+    msgEl.textContent = message;
+}
+
+/* ── Render Cards ── */
+function displayPlaces(placesList) {
     if (!placesContainer) return;
 
-    // Keep the sr-only heading in the container when clearing out old members
+    // Preserve sr-only heading
     placesContainer.innerHTML = '<h1 class="sr-only">Places Listings</h1>';
 
-    // Create DocumentFragment for performance optimization
     const fragment = document.createDocumentFragment();
 
-    places.forEach((place) => {
+    placesList.forEach((place) => {
         const card = document.createElement("article");
         card.classList.add("place-card");
 
-        const { src1x, src2x } = getResponsivePaths(place.photoUrl);
-
-        card.innerHTML = ` 
-        <h2 class="card-title-top">${place.name}</h2>
+        card.innerHTML = `
+            <h2 class="card-title-top">${place.name}</h2>
             <figure>
                 <img
                     src="${place.photoUrl}"
                     alt="${place.name}"
                     loading="lazy"
+                    fetchpriority="high"
                     decoding="async"
-                    width="${place.width}"
-                    height="${place.height}">
+                    width="300" 
+                    height="200">
             </figure>
-
             <div class="place-content">
-                <p class="card-info"><strong>Address:</strong> ${place.address}</p>
+                <address>${place.address}</address>
                 <p class="card-info"><strong>Industry:</strong> ${place.industry}</p>
                 <p class="card-info">${place.description}</p>
-                <a href="${place.photoUrl}" target="_blank" rel="noopener noreferrer">
-                    View Photo
-                </a>
+                <button class="learn-more-btn" type="button">Learn More</button>
             </div>
         `;
 
         fragment.appendChild(card);
     });
 
-    // Append fragment all at once
     placesContainer.appendChild(fragment);
 }
 
 displayPlaces(places);
+showVisitorMessage();

@@ -1,6 +1,5 @@
 export const places = [
     {
-        "id": 1,
         "name": "Restaurante Capim Santo São Paulo",
         "industry": "Restaurant",
         "address": "Av. Brig. Faria Lima, 2705, Jardim Paulistano, São Paulo, SP",
@@ -10,7 +9,6 @@ export const places = [
         "photoUrl": "images/capim.webp"
     },
     {
-        "id": 2,
         "name": "Livraria Martins Fontes",
         "industry": "Bookstore",
         "address": "Av. Paulista, 509, Bela Vista, São Paulo, SP",
@@ -20,7 +18,6 @@ export const places = [
         "photoUrl": "images/martins-fontes.webp"
     },
     {
-        "id": 3,
         "name": "iSpaces Coworking",
         "industry": "Coworking Space",
         "address": "Rua Pamplona, 145, Jardim Paulista, São Paulo, SP",
@@ -30,7 +27,6 @@ export const places = [
         "photoUrl": "images/i-spaces.webp"
     },
     {
-        "id": 4,
         "name": "Coffee Lab",
         "industry": "Coffee Shop",
         "address": "Rua Aspicuelta, 227, Vila Madalena, São Paulo, SP",
@@ -40,7 +36,6 @@ export const places = [
         "photoUrl": "images/coffee-lab.webp"
     },
     {
-        "id": 5,
         "name": "Hilton São Paulo Morumbi",
         "industry": "Hotel",
         "address": "Av. das Nações Unidas, 12901, Brooklin, São Paulo, SP",
@@ -50,7 +45,6 @@ export const places = [
         "photoUrl": "images/hilton.webp"
     },
     {
-        "id": 6,
         "name": "Centro Cultural São Paulo",
         "industry": "Cultural Center",
         "address": "Rua Vergueiro, 1000, Liberdade, São Paulo, SP",
@@ -60,7 +54,6 @@ export const places = [
         "photoUrl": "images/cultural.webp"
     },
     {
-        "id": 7,
         "name": "Shopping Cidade São Paulo",
         "industry": "Shopping Center",
         "address": "Av. Paulista, 1230, Bela Vista, São Paulo, SP",
@@ -70,7 +63,6 @@ export const places = [
         "photoUrl": "images/cidade-sp.webp"
     },
     {
-        "id": 8,
         "name": "Mercado Municipal de São Paulo",
         "industry": "Public Market",
         "address": "Rua da Cantareira, 306, Centro Histórico, São Paulo, SP",
