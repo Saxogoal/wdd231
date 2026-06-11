@@ -37,17 +37,13 @@ function displayPlaces(placesList) {
     if (!placesContainer) return;
 
     // Preserve sr-only heading
-    placesContainer.innerHTML = '<h1 class="sr-only">Places Listings</h1>';
+    placesContainer.innerHTML = '<h2 class="sr-only">Places Listings</h2>';
 
     const fragment = document.createDocumentFragment();
 
-    placesList.forEach((place, index) => {
+    placesList.forEach((place) => {
         const card = document.createElement("article");
         card.classList.add("place-card");
-
-        // First card image: eager + high priority for LCP. Rest: lazy.
-        const isFirst = index === 0;
-        const loadAttr = isFirst ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
 
         card.innerHTML = `
             <h2 class="card-title-top">${place.name}</h2>
@@ -55,7 +51,7 @@ function displayPlaces(placesList) {
                 <img
                     src="${place.photoUrl}"
                     alt="${place.name}"
-                    ${loadAttr}
+                    loading="lazy"
                     decoding="async"
                     width="${places.width}"
                     height="${places.height}">
