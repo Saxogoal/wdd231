@@ -20,7 +20,9 @@
     --heading-font: "Montserrat", sans-serif;
     --body-font: "Open Sans", sans-serif;
 }
-
+.hero-image-section img{
+    border-radius: 10px;
+}
 body {
     font-family: var(--body-font);
     background-color: var(--secondary);
