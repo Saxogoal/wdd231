@@ -12,7 +12,7 @@
     <meta property="og:title" content="Library | PageTurner Hub">
     <meta property="og:description"
         content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
-    <meta property="og:image" content="https://saxogoal.github.io/wdd231/finalproject/images/library.webp">
+    <meta property="og:image" content="https://saxogoal.github.io/wdd231/finalproject/images/pgturner.webp">
     <meta property="og:url" content="https://saxogoal.github.io/wdd231/finalproject/library.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
@@ -38,6 +38,35 @@
     <script type="module" src="scripts/library.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <div class="header-top">
+            <a href="index.html" class="nav-logo" aria-label="PageTurner Hub Home">
+                <picture>
+                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="128" height="85"
+                        fetchpriority="high">
+                </picture>
+            </a>
+            <p class="site-title">
+                PageTurner Hub
+            </p>
+            <nav aria-label="Main navigation">
+                <button id="menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"></button>
+            </nav>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="library.html" aria-current="page">Library</a>
+            <a href="log.html">Log</a>
+        </div>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <a href="https://github.com/Saxogoal?tab=repositories"><img src="images/logo-github.svg" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/andré-piros-250062210/"><img src="images/logo-linkedin.svg" alt="LinkedIn"></a>
+        <p>&copy; <span id="currentyear"></span> André Piros</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>
