@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette Core Variables */
+    --primary: #3b2f2f;
+    /* Espresso */
+    --secondary: #7c4f2f;
+    /* Cognac */
+    --accent: #f0e6d8;
+    /* Parchment */
+    --leaf: #4a7c59;
+    /* Leaf green */
+    --text: #2c2c2a;
+    /* Charcoal text */
+    --ivory: #f7f4ef;
+    /* High Contrast Light */
+
+    /* Document Font Configuration mappings */
+    --heading-font: 'Lora', serif;
+    --body-font: 'Inter', sans-serif;
+    --mono-font: 'JetBrains Mono', monospace;
+}
