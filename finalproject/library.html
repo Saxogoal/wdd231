@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library | PageTurner Hub</title>
-    <meta name="description" content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
+    <meta name="description"
+        content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
     <meta name="author" content="André Piros">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://saxogoal.github.io/wdd231/finalproject/library.html">
-    
+
     <meta property="og:title" content="Library | PageTurner Hub">
     <meta property="og:description"
         content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
@@ -16,41 +18,41 @@
     <meta property="og:url" content="https://saxogoal.github.io/wdd231/finalproject/library.html">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Library | PageTurner Hub">
     <meta name="twitter:description"
         content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
     <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/finalproject/images/pgturner.webp">
-    
+
     <link rel="icon" href="images/pgturner.ico">
-    
-    <link rel="preload" as="image" href="images/pgturner.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles/pgturner.css">
+    <link rel="stylesheet" href="styles/library.css">
     <link rel="stylesheet" href="styles/pgturner-large.css">
 
     <script src="scripts/common.js" defer></script>
     <script type="module" src="scripts/library.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="header-top">
-            <a href="index.html" class="nav-logo" aria-label="PageTurner Hub Home">
+            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
                 <picture>
-                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="128" height="85"
-                        fetchpriority="high">
+                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
+                        fetchpriority="high" onerror="this.style.display='none'">
                 </picture>
             </a>
-            <p class="site-title">
-                PageTurner Hub
-            </p>
+            <p class="site-title">PageTurner Hub</p>
             <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks"></button>
+                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="navLinks"></button>
             </nav>
         </div>
         <div class="nav-links" id="navLinks">
@@ -59,14 +61,86 @@
             <a href="log.html">Log</a>
         </div>
     </header>
-    <main>
 
+    <main>
+        <div class="library-header">
+            <span class="section-label" style="color:var(--accent); opacity:0.8;">Browse</span>
+            <h1>The Library</h1>
+            <p>Explore our collection. Click any book for more details.</p>
+        </div>
+
+        <div class="filter-bar">
+            <div class="filter-row">
+                <input type="search" id="searchInput" placeholder="Search title or author…" aria-label="Search books">
+                <select id="genreFilter" aria-label="Filter by genre">
+                    <option value="">All Genres</option>
+                </select>
+                <select id="sortSelect" aria-label="Sort books">
+                    <option value="title-asc">Title A–Z</option>
+                    <option value="title-desc">Title Z–A</option>
+                    <option value="rating-desc">Highest Rated</option>
+                    <option value="rating-asc">Lowest Rated</option>
+                    <option value="pages-asc">Shortest</option>
+                    <option value="pages-desc">Longest</option>
+                    <option value="year-desc">Newest</option>
+                    <option value="year-asc">Oldest</option>
+                </select>
+            </div>
+            <span class="book-count" id="bookCount" aria-live="polite">Loading…</span>
+        </div>
+
+        <div class="books-section">
+            <div class="books-grid" id="booksGrid" aria-live="polite">
+                <div class="no-results">Loading books…</div>
+            </div>
+        </div>
     </main>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+            <div class="modal-header">
+                <img src="" alt="" class="modal-cover" id="modalCover">
+                <div class="modal-header-info">
+                    <span class="modal-genre" id="modalGenre"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <p class="modal-author" id="modalAuthor"></p>
+                </div>
+                <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-stats">
+                    <div class="modal-stat">
+                        <span class="modal-stat-value" id="modalRating"></span>
+                        <span class="modal-stat-label">Rating</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-value" id="modalPages"></span>
+                        <span class="modal-stat-label">Pages</span>
+                    </div>
+                    <div class="modal-stat">
+                        <span class="modal-stat-value" id="modalYear"></span>
+                        <span class="modal-stat-label">Published</span>
+                    </div>
+                </div>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-actions">
+                    <a href="log.html" class="btn-primary" id="modalLogLink">Log This Book →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <a href="https://github.com/Saxogoal?tab=repositories"><img src="images/logo-github.svg" alt="GitHub"></a>
-        <a href="https://www.linkedin.com/in/andré-piros-250062210/"><img src="images/logo-linkedin.svg" alt="LinkedIn"></a>
+        <a href="https://github.com/Saxogoal?tab=repositories" aria-label="GitHub Profile">
+            <img src="images/logo-github.svg" alt="GitHub" width="22" height="22">
+        </a>
+        <a href="https://www.linkedin.com/in/andr%C3%A9-piros-250062210/" aria-label="LinkedIn Profile">
+            <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
+        </a>
         <p>&copy; <span id="currentyear"></span> André Piros</p>
         <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
 </body>
+
 </html>

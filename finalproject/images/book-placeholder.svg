@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180" width="120" height="180">
+  <rect width="120" height="180" fill="#f0e6d8"/>
+  <rect x="8" y="8" width="104" height="164" rx="3" fill="none" stroke="#d8c8b8" stroke-width="1.5"/>
+  <rect x="14" y="14" width="10" height="152" rx="2" fill="#d8c8b8"/>
+  <text x="65" y="80" font-family="serif" font-size="32" fill="#c0aa98" text-anchor="middle">📖</text>
+  <text x="65" y="110" font-family="sans-serif" font-size="9" fill="#aaa" text-anchor="middle">No Cover</text>
+</svg>

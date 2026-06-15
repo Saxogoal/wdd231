@@ -1,0 +1,189 @@
+/* =====================
+   TABLET — 640px+
+   ===================== */
+@media (min-width: 640px) {
+    .benefits-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .filter-row {
+        flex: 1;
+    }
+
+    .log-form-section .form-row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =====================
+   DESKTOP — 900px+
+   ===================== */
+@media (min-width: 900px) {
+
+    /* Header: always-visible horizontal nav */
+    #menu {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row;
+        border-top: none;
+        padding: 0;
+        gap: 0;
+        background: transparent;
+    }
+
+    .header-top {
+        padding: 0.6rem 2rem;
+    }
+
+    .nav-links a {
+        padding: 0.6rem 1.1rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        font-size: 0.88rem;
+        border-radius: 0;
+    }
+
+    .nav-links a:hover {
+        background: rgba(247, 244, 239, 0.08);
+        border-bottom-color: var(--secondary);
+        border-left-color: transparent;
+    }
+
+    .nav-links a[aria-current="page"] {
+        background: rgba(240, 230, 216, 0.1);
+        border-bottom-color: var(--accent);
+        border-left-color: transparent;
+    }
+
+    /* Sections wider with more padding */
+    section {
+        padding: 4rem 2rem;
+    }
+
+    .hero {
+        padding: 5rem 2rem 6rem;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+
+    /* Benefits */
+    .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Stats */
+    .stats-grid {
+        max-width: 600px;
+    }
+
+    /* Library */
+    .library-header {
+        padding: 3rem 2rem 2.5rem;
+    }
+
+    .filter-bar {
+        padding: 1rem 2rem;
+    }
+
+    .books-section {
+        padding: 2rem 2rem 4rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .book-card {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0;
+    }
+
+    .book-cover {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .book-info {
+        padding: 0 1rem 1.25rem;
+    }
+
+    /* Log layout — side by side */
+    .log-header {
+        padding: 3rem 2rem 2.5rem;
+    }
+
+    .log-layout {
+        grid-template-columns: 1fr 1fr;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .log-layout .log-form-section,
+    .log-layout .goals-section {
+        padding: 0;
+        background: transparent;
+    }
+
+    .log-entries-full {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 2rem 3rem;
+    }
+
+    .log-entries-section {
+        padding: 0;
+    }
+
+    /* Action page */
+    .action-page {
+        padding: 4rem 2rem;
+    }
+
+    /* Quotes */
+    .quotes-section {
+        padding: 4rem 2rem !important;
+    }
+}
+
+/* =====================
+   WIDE — 1200px+
+   ===================== */
+@media (min-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .benefits-grid {
+        max-width: 1100px;
+    }
+
+    .stats-grid {
+        max-width: 700px;
+    }
+}

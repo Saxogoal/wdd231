@@ -1,0 +1,42 @@
+/* ==========================================
+   HOME PAGE SPECIFIC STYLES
+   ========================================== */
+.hero-section {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: var(--accent);
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+}
+
+.quote-container {
+    font-style: italic;
+    background: #fff;
+    padding: 1.5rem;
+    border-left: 4px solid var(--secondary);
+    margin: 2rem 0;
+    box-shadow: var(--shadow);
+}
+
+.quote-author {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--background);
+}

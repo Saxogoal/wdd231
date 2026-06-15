@@ -12,10 +12,26 @@ function initCommonLayout() {
     const navLinks = document.querySelector("#navLinks");
 
     if (menuButton && navLinks) {
+        // Build hamburger lines
+        menuButton.innerHTML = `
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+        `;
+
         menuButton.addEventListener("click", () => {
             const isOpen = navLinks.classList.toggle("open");
             menuButton.classList.toggle("open", isOpen);
             menuButton.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        // Close nav when a link is clicked (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuButton.classList.remove('open');
+                menuButton.setAttribute('aria-expanded', 'false');
+            });
         });
     }
 

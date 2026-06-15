@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Logged | PageTurner Hub</title>
+    <meta name="description" content="Book successfully logged to your PageTurner Hub reading log.">
+    <meta name="author" content="André Piros">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" href="images/pgturner.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/pgturner.css">
+    <link rel="stylesheet" href="styles/log-action.css">    
+    <link rel="stylesheet" href="styles/pgturner-large.css">
+
+    <script src="scripts/common.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const fields = [
+                { key: 'title', label: 'Title' },
+                { key: 'author', label: 'Author' },
+                { key: 'genre', label: 'Genre' },
+                { key: 'date', label: 'Date Finished' },
+                { key: 'rating', label: 'Rating' },
+                { key: 'review', label: 'Review / Notes' },
+            ];
+
+            const container = document.getElementById('submittedData');
+
+            const rows = fields
+                .filter(f => params.get(f.key))
+                .map(f => {
+                    let value = params.get(f.key);
+                    if (f.key === 'rating' && parseInt(value) > 0) {
+                        value = '★'.repeat(parseInt(value)) + '☆'.repeat(5 - parseInt(value)) + ` (${value}/5)`;
+                    }
+                    return `
+                        <div class="data-row">
+                            <span class="data-key">${f.label}</span>
+                            <span class="data-val">${value || '—'}</span>
+                        </div>
+                    `;
+                });
+
+            if (rows.length === 0) {
+                container.innerHTML = '<p style="padding:1rem; color:#888;">No data was submitted.</p>';
+            } else {
+                container.innerHTML = rows.join('');
+            }
+
+            // Show book title in success message
+            const titleParam = params.get('title');
+            if (titleParam) {
+                document.getElementById('successTitle').textContent = `"${titleParam}" has been logged!`;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
+                <picture>
+                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
+                        fetchpriority="high" onerror="this.style.display='none'">
+                </picture>
+            </a>
+            <p class="site-title">PageTurner Hub</p>
+            <nav aria-label="Main navigation">
+                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
+                    aria-controls="navLinks"></button>
+            </nav>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="library.html">Library</a>
+            <a href="log.html">Log</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="action-page">
+            <div class="action-success">
+                <span class="check-icon">✅</span>
+                <h2 id="successTitle">Book successfully logged!</h2>
+                <p style="font-size:0.875rem; color:#555; margin-top:0.5rem;">Your reading log has been saved.</p>
+            </div>
+
+            <div class="submitted-data">
+                <h3>Submitted Details</h3>
+                <div id="submittedData">
+                    <p style="padding:1rem; color:#888;">Loading…</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="log.html" class="btn-primary">← Back to Log</a>
+                <a href="library.html" class="btn-outline"
+                    style="color:var(--primary); border-color:var(--border);">Browse Library</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://github.com/Saxogoal?tab=repositories" aria-label="GitHub Profile">
+            <img src="images/logo-github.svg" alt="GitHub" width="22" height="22">
+        </a>
+        <a href="https://www.linkedin.com/in/andr%C3%A9-piros-250062210/" aria-label="LinkedIn Profile">
+            <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
+        </a>
+        <p>&copy; <span id="currentyear"></span> André Piros</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+/* ==========================================
+   LOG ACTION SUCCESS PAGE SPECIFIC STYLES
+   ========================================== */
+.action-page {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.action-success {
+    text-align: center;
+    padding: 2rem;
+    background-color: #eef7ee;
+    border-radius: var(--radius);
+    border: 1px solid #c2e1c2;
+    margin-bottom: 2rem;
+}
+
+.check-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.submitted-data {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.submitted-data h3 {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--text-light);
+}
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+.data-key {
+    font-weight: 600;
+    color: var(--link-color);
+}
+
+.data-val {
+    color: var(--text-dark);
+    text-align: right;
+}
+
+/* Button variants styling mapped explicitly to your HTML classes */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--primary);
+    border-radius: var(--radius);
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent);
+    text-decoration: none;
+}
