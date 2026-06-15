@@ -5,15 +5,16 @@
 }
 
 :root {
-    /* Color Palette */
+    /* Color Palette — Adjusted for AAA/AA Accessibility Contrast Compliance */
     --primary: #3b2f2f;
     /* Espresso */
-    --secondary: #7c4f2f;
-    /* Cognac */
+    --secondary: #704426;
+    /* Cognac (Slightly darkened to pass on parchment) */
     --accent: #f0e6d8;
     /* Parchment */
-    --leaf: #4a7c59;
-    /* Leaf green */
+    --leaf: #34593f;
+    --leaf-dark: #3d664a;
+    /* Leaf green (Deepened to pass on light backgrounds) */
     --text: #2c2c2a;
     /* Charcoal text */
     --ivory: #f7f4ef;
@@ -217,7 +218,7 @@ section:nth-child(even) {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--secondary);
+    color: #573720;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -303,7 +304,7 @@ section:nth-child(even) {
 }
 
 .btn-primary:hover {
-    background: #6a3e22;
+    background: #57331c;
     transform: translateY(-1px);
     text-decoration: none;
     color: var(--ivory);
@@ -532,7 +533,7 @@ section:nth-child(even) {
 .book-count {
     font-family: var(--mono-font);
     font-size: 0.8rem;
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 600;
 }
 
@@ -584,7 +585,7 @@ section:nth-child(even) {
     font-size: 0.68rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--leaf);
+    color: #1b432c;
     font-weight: 600;
     display: block;
     margin-bottom: 0.3rem;
@@ -601,7 +602,7 @@ section:nth-child(even) {
 
 .book-author {
     font-size: 0.8rem;
-    color: #666;
+    color: #4a4a4a;
     margin-bottom: 0.6rem;
 }
 
@@ -610,7 +611,8 @@ section:nth-child(even) {
     gap: 1rem;
     font-family: var(--mono-font);
     font-size: 0.72rem;
-    color: #888;
+    color: #626260;
+    /* Changed from #888 */
     flex-wrap: wrap;
 }
 
@@ -625,7 +627,7 @@ section:nth-child(even) {
 }
 
 .stars {
-    color: #c8971a;
+    color: #573c00;
 }
 
 /* Empty state */
@@ -777,7 +779,8 @@ section:nth-child(even) {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #888;
+    color: #626260;
+    /* Changed from #888 */
     display: block;
     margin-top: 0.2rem;
 }
@@ -871,7 +874,7 @@ section:nth-child(even) {
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--secondary);
-    box-shadow: 0 0 0 3px rgba(124, 79, 47, 0.12);
+    box-shadow: 0 0 0 3px rgba(112, 68, 38, 0.12);
 }
 
 .form-group textarea {
@@ -927,7 +930,7 @@ section:nth-child(even) {
 }
 
 .submit-btn:hover {
-    background: #6a3e22;
+    background: #57331c;
     transform: translateY(-1px);
 }
 
@@ -972,7 +975,8 @@ section:nth-child(even) {
 .progress-label {
     font-family: var(--mono-font);
     font-size: 0.75rem;
-    color: var(--leaf);
+    color: var(--leaf-dark);
+    /* Changed from var(--leaf) */
     font-weight: 600;
 }
 
@@ -1017,7 +1021,8 @@ section:nth-child(even) {
 .log-entry-meta {
     font-family: var(--mono-font);
     font-size: 0.72rem;
-    color: #888;
+    color: #626260;
+    /* Changed from #888 */
     margin-top: 0.25rem;
 }
 
@@ -1044,7 +1049,7 @@ section:nth-child(even) {
 
 .empty-log {
     text-align: center;
-    color: #555;
+    color: var(--text) !important;
     padding: 2rem;
     font-size: 0.9rem;
 }
@@ -1125,7 +1130,7 @@ section:nth-child(even) {
    ===================== */
 footer {
     background: var(--primary);
-    color: rgba(247, 244, 239, 0.7);
+    color: #dcd8d3;
     padding: 1.5rem 1.25rem;
     display: flex;
     flex-wrap: wrap;
@@ -1151,7 +1156,9 @@ footer p {
     font-family: var(--mono-font);
     font-size: 0.75rem;
 }
-
+footer span {
+    color: #dcd8d3;
+}
 /* =====================
    ACCESSIBILITY / UTILITIES
    ===================== */
@@ -1184,4 +1191,15 @@ footer p {
     color: #555;
     font-size: 0.9rem;
     grid-column: 1/-1;
+}
+.book-meta span,
+.book-card span {
+    color: #444442;
+    /* Clean, accessible dark gray */
+}
+
+/* Ensures page numbers inside the detailed view modal pass contrast tests */
+.modal-stat-value {
+    color: var(--text) !important;
+    font-weight: 700;
 }

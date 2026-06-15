@@ -21,9 +21,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Library | PageTurner Hub">
-    <meta name="twitter:description"
-        content="Discover a world of books at PageTurner Hub's Library. Explore our extensive collection, find your next read, and immerse yourself in the joy of reading.">
-    <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/finalproject/images/pgturner.webp">
+    <meta name="twitter:description" content="Discover a world of books at PageTurner Hub's Library.">
 
     <link rel="icon" href="images/pgturner.ico">
 
@@ -36,99 +34,101 @@
     <link rel="stylesheet" href="styles/pgturner-large.css">
 
     <script src="scripts/common.js" defer></script>
-    <script type="module" src="scripts/library.js" defer></script>
+    <script src="scripts/library.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-top">
-            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
-                <picture>
-                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
-                        fetchpriority="high" onerror="this.style.display='none'">
-                </picture>
+            <a href="home.html" class="nav-logo">
+                <img src="images/pgturner.webp" alt="PageTurner Hub Logo" width="52" height="52">
             </a>
-            <p class="site-title">PageTurner Hub</p>
-            <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
-                    aria-controls="navLinks"></button>
-            </nav>
+            <span class="site-title">PageTurner Hub</span>
+            <button id="menu" aria-label="Toggle Navigation Menu">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
         </div>
-        <div class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
             <a href="home.html">Home</a>
             <a href="library.html" aria-current="page">Library</a>
-            <a href="log.html">Log</a>
-        </div>
+            <a href="log.html">Reading Log</a>
+        </nav>
     </header>
 
     <main>
-        <div class="library-header">
-            <span class="section-label" style="color:var(--accent); opacity:0.8;">Browse</span>
-            <h1>The Library</h1>
-            <p>Explore our collection. Click any book for more details.</p>
-        </div>
+        <section class="library-header">
+            <h1>Curated Book Library</h1>
+            <p>Explore high-rated books or filter dynamically to match your mood.</p>
+        </section>
 
         <div class="filter-bar">
-            <div class="filter-row">
-                <input type="search" id="searchInput" placeholder="Search title or author…" aria-label="Search books">
+            <div class="filter-bar-row">
+                <input type="text" id="searchInput" placeholder="Search by title, author, or genre..."
+                    aria-label="Search books">
                 <select id="genreFilter" aria-label="Filter by genre">
-                    <option value="">All Genres</option>
+                    <option value="all">All Genres</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="dystopian">Dystopian</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="romance">Romance</option>
+                    <option value="biography">Biography</option>
+                    <option value="self-help">Self-Help</option>
                 </select>
-                <select id="sortSelect" aria-label="Sort books">
-                    <option value="title-asc">Title A–Z</option>
-                    <option value="title-desc">Title Z–A</option>
-                    <option value="rating-desc">Highest Rated</option>
-                    <option value="rating-asc">Lowest Rated</option>
-                    <option value="pages-asc">Shortest</option>
-                    <option value="pages-desc">Longest</option>
-                    <option value="year-desc">Newest</option>
-                    <option value="year-asc">Oldest</option>
+                <select id="sortBy" aria-label="Sort books by">
+                    <option value="default">Sort Options</option>
+                    <option value="title">Title (A-Z)</option>
+                    <option value="author">Author (A-Z)</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="pages">Page Count</option>
                 </select>
             </div>
-            <span class="book-count" id="bookCount" aria-live="polite">Loading…</span>
+            <div class="book-count"><span id="displayedCount">0</span> of <span id="totalCount">0</span> books visible
+            </div>
         </div>
 
-        <div class="books-section">
-            <div class="books-grid" id="booksGrid" aria-live="polite">
-                <div class="no-results">Loading books…</div>
+        <section class="books-section">
+            <div class="books-grid" id="booksGrid">
+            </div>
+        </section>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <img src="images/pgturner.webp" alt="Placeholder Book Cover" class="modal-cover" id="modalCover">
+                    <div class="modal-header-info">
+                        <span class="modal-genre" id="modalGenre">GENRE</span>
+                        <h2 class="modal-title" id="modalTitle">Book Title</h2>
+                        <p class="modal-author" id="modalAuthor">by Author Name</p>
+                    </div>
+                    <button class="modal-close" id="closeModal" aria-label="Close detailed view">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <span class="modal-stat-value" id="modalRating">0.0</span>
+                            <span class="modal-stat-label">Rating</span>
+                        </div>
+                        <div class="modal-stat">
+                            <span class="modal-stat-value" id="modalPages">0</span>
+                            <span class="modal-stat-label">Pages</span>
+                        </div>
+                        <div class="modal-stat">
+                            <span class="modal-stat-value" id="modalYear">0000</span>
+                            <span class="modal-stat-label">Published</span>
+                        </div>
+                    </div>
+                    <p class="modal-description" id="modalDescription">Detailed information about this selection.</p>
+                    <div class="modal-actions">
+                        <a href="log.html" class="btn-primary" id="modalLogLink">Log This Book →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal">
-            <div class="modal-header">
-                <img src="" alt="" class="modal-cover" id="modalCover">
-                <div class="modal-header-info">
-                    <span class="modal-genre" id="modalGenre"></span>
-                    <h2 class="modal-title" id="modalTitle"></h2>
-                    <p class="modal-author" id="modalAuthor"></p>
-                </div>
-                <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="modal-stats">
-                    <div class="modal-stat">
-                        <span class="modal-stat-value" id="modalRating"></span>
-                        <span class="modal-stat-label">Rating</span>
-                    </div>
-                    <div class="modal-stat">
-                        <span class="modal-stat-value" id="modalPages"></span>
-                        <span class="modal-stat-label">Pages</span>
-                    </div>
-                    <div class="modal-stat">
-                        <span class="modal-stat-value" id="modalYear"></span>
-                        <span class="modal-stat-label">Published</span>
-                    </div>
-                </div>
-                <p class="modal-description" id="modalDescription"></p>
-                <div class="modal-actions">
-                    <a href="log.html" class="btn-primary" id="modalLogLink">Log This Book →</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <footer>
         <a href="https://github.com/Saxogoal?tab=repositories" aria-label="GitHub Profile">
@@ -138,7 +138,7 @@
             <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
         </a>
         <p>&copy; <span id="currentyear"></span> André Piros</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
+        <p class="footer-last-modified">Last Modified: <span id="lastmodified"></span></p>
     </footer>
 </body>
 

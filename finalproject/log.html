@@ -21,9 +21,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Log | PageTurner Hub">
-    <meta name="twitter:description"
-        content="Log your completed books, write reviews, and set your yearly reading goal with PageTurner Hub.">
-    <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/finalproject/images/pgturner.webp">
+    <meta name="twitter:description" content="Log your completed books and track stats.">
 
     <link rel="icon" href="images/pgturner.ico">
 
@@ -36,127 +34,124 @@
     <link rel="stylesheet" href="styles/pgturner-large.css">
 
     <script src="scripts/common.js" defer></script>
-    <script type="module" src="scripts/log.js" defer></script>
+    <script src="scripts/log.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-top">
-            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
-                <picture>
-                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
-                        fetchpriority="high" onerror="this.style.display='none'">
-                </picture>
+            <a href="home.html" class="nav-logo">
+                <img src="images/pgturner.webp" alt="PageTurner Hub Logo" width="52" height="52">
             </a>
-            <p class="site-title">PageTurner Hub</p>
-            <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
-                    aria-controls="navLinks"></button>
-            </nav>
+            <span class="site-title">PageTurner Hub</span>
+            <button id="menu" aria-label="Toggle Navigation Menu">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
         </div>
-        <div class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
             <a href="home.html">Home</a>
             <a href="library.html">Library</a>
-            <a href="log.html" aria-current="page">Log</a>
-        </div>
+            <a href="log.html" aria-current="page">Reading Log</a>
+        </nav>
     </header>
 
     <main>
-        <div class="log-header">
-            <span class="section-label" style="color:var(--accent); opacity:0.8;">Reading Log</span>
-            <h1>Your Book Log</h1>
-            <p>Record what you've read, rate it, and track your yearly goal.</p>
-        </div>
+        <section class="log-header">
+            <h1>Your Personal Reading Log</h1>
+            <p>Save finished reading details, write short reports, and balance goals.</p>
+        </section>
 
         <div class="log-layout">
-            <!-- LOG FORM -->
             <section class="log-form-section">
-                <h2>Log a completed book</h2>
-                <form id="logForm" action="log-action.html" method="GET" novalidate>
+                <h2>Record a Book</h2>
+                <form id="logBookForm" action="log-action.html" method="get">
                     <div class="form-group">
-                        <label for="bookTitle">Book Title <span aria-hidden="true">*</span></label>
-                        <input type="text" id="bookTitle" name="title" placeholder="Enter the book title" required
-                            minlength="1">
+                        <label for="bookTitle">Book Title *</label>
+                        <input type="text" id="bookTitle" name="title" required placeholder="e.g., The Great Gatsby">
                     </div>
 
                     <div class="form-group">
-                        <label for="bookAuthor">Author <span aria-hidden="true">*</span></label>
-                        <input type="text" id="bookAuthor" name="author" placeholder="Author's name" required>
+                        <label for="bookAuthor">Author *</label>
+                        <input type="text" id="bookAuthor" name="author" required
+                            placeholder="e.g., F. Scott Fitzgerald">
                     </div>
 
-                    <div class="form-row">
+                    <div class="form-fields-row">
                         <div class="form-group">
                             <label for="bookGenre">Genre</label>
                             <select id="bookGenre" name="genre">
-                                <option value="">Select genre</option>
-                                <option value="Fantasy">Fantasy</option>
-                                <option value="Science Fiction">Science Fiction</option>
                                 <option value="Fiction">Fiction</option>
-                                <option value="Historical Fiction">Historical Fiction</option>
-                                <option value="Non-Fiction">Non-Fiction</option>
-                                <option value="Memoir">Memoir</option>
+                                <option value="Dystopian">Dystopian</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Sci-Fi">Sci-Fi</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Biography">Biography</option>
                                 <option value="Self-Help">Self-Help</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="dateFinished">Date Finished</label>
-                            <input type="date" id="dateFinished" name="date">
+                            <label for="bookPages">Page Count</label>
+                            <input type="number" id="bookPages" name="pages" min="1" placeholder="320">
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookFinishDate">Date Finished *</label>
+                        <input type="date" id="bookFinishDate" name="finishDate" required>
                     </div>
 
                     <div class="form-group">
                         <label>Your Rating</label>
-                        <div class="rating-input" id="ratingInput" role="radiogroup" aria-label="Book rating">
-                            <button type="button" class="star-btn" data-value="1" aria-label="1 star">★</button>
-                            <button type="button" class="star-btn" data-value="2" aria-label="2 stars">★</button>
-                            <button type="button" class="star-btn" data-value="3" aria-label="3 stars">★</button>
-                            <button type="button" class="star-btn" data-value="4" aria-label="4 stars">★</button>
-                            <button type="button" class="star-btn" data-value="5" aria-label="5 stars">★</button>
+                        <div class="rating-input">
+                            <button type="button" class="star-btn" data-value="1" aria-label="1 Star">★</button>
+                            <button type="button" class="star-btn" data-value="2" aria-label="2 Stars">★</button>
+                            <button type="button" class="star-btn" data-value="3" aria-label="3 Stars">★</button>
+                            <button type="button" class="star-btn" data-value="4" aria-label="4 Stars">★</button>
+                            <button type="button" class="star-btn" data-value="5" aria-label="5 Stars">★</button>
                         </div>
-                        <input type="hidden" name="rating" id="ratingValue" value="0">
+                        <input type="hidden" id="bookRating" name="rating" value="0">
                     </div>
 
                     <div class="form-group">
-                        <label for="bookReview">Review / Notes</label>
-                        <textarea id="bookReview" name="review" placeholder="What did you think? (optional)"
-                            rows="3"></textarea>
+                        <label for="bookNotes">Thoughts & Notes</label>
+                        <textarea id="bookNotes" name="notes"
+                            placeholder="What stayed with you after finishing this book?"></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Log this book →</button>
+                    <button type="submit" class="submit-btn">Save Entry to Log</button>
                 </form>
             </section>
 
-            <!-- READING GOAL -->
             <section class="goals-section">
-                <h2>Reading Goal</h2>
+                <h2>Yearly Target Balance</h2>
                 <div class="goal-form">
-                    <h3>📅 <span id="goalYear"></span> Goal</h3>
-                    <div class="form-group" style="margin-bottom:0.5rem;">
-                        <label for="goalTarget">Books to read this year</label>
-                        <input type="number" id="goalTarget" name="goalTarget" min="1" max="365" placeholder="e.g. 24">
+                    <h3>Configure Target</h3>
+                    <div class="form-fields-row">
+                        <div class="form-group">
+                            <label for="goalInput">Books Target</label>
+                            <input type="number" id="goalInput" min="1" max="200" value="12">
+                        </div>
                     </div>
-                    <button type="button" class="submit-btn" id="saveGoalBtn" style="margin-top:0.75rem;">Save
-                        Goal</button>
                 </div>
 
-                <div class="goal-progress" id="goalProgress" style="display:none;">
-                    <h3 style="font-size:1rem; margin-bottom:0.75rem;">Progress</h3>
+                <div class="goal-form">
+                    <h3>Goal Tracker Progress</h3>
                     <div class="progress-bar-wrap">
-                        <div class="progress-bar-fill" id="progressFill" style="width:0%"></div>
+                        <div class="progress-bar-fill" id="progressFill"></div>
                     </div>
                     <p class="progress-label" id="progressLabel"></p>
                 </div>
             </section>
         </div>
 
-        <!-- LOG ENTRIES -->
         <div class="log-entries-full">
             <section class="log-entries-section">
-                <h2>Books you've read <span id="logCount"
-                        style="font-family:var(--mono-font); font-size:0.85rem; color:var(--secondary); font-weight:600;"></span>
-                </h2>
-                <div class="log-list" id="logList" aria-live="polite">
+                <h2>Books you've read <span id="logCount"></span></h2>
+                <div class="log-list" id="logList">
                     <p class="empty-log">No books logged yet. Use the form above to add your first one!</p>
                 </div>
             </section>
@@ -171,7 +166,7 @@
             <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
         </a>
         <p>&copy; <span id="currentyear"></span> André Piros</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
+        <p class="footer-last-modified">Last Modified: <span id="lastmodified"></span></p>
     </footer>
 </body>
 

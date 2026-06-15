@@ -20,71 +20,27 @@
     <link rel="stylesheet" href="styles/pgturner-large.css">
 
     <script src="scripts/common.js" defer></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-
-            const fields = [
-                { key: 'title', label: 'Title' },
-                { key: 'author', label: 'Author' },
-                { key: 'genre', label: 'Genre' },
-                { key: 'date', label: 'Date Finished' },
-                { key: 'rating', label: 'Rating' },
-                { key: 'review', label: 'Review / Notes' },
-            ];
-
-            const container = document.getElementById('submittedData');
-
-            const rows = fields
-                .filter(f => params.get(f.key))
-                .map(f => {
-                    let value = params.get(f.key);
-                    if (f.key === 'rating' && parseInt(value) > 0) {
-                        value = '★'.repeat(parseInt(value)) + '☆'.repeat(5 - parseInt(value)) + ` (${value}/5)`;
-                    }
-                    return `
-                        <div class="data-row">
-                            <span class="data-key">${f.label}</span>
-                            <span class="data-val">${value || '—'}</span>
-                        </div>
-                    `;
-                });
-
-            if (rows.length === 0) {
-                container.innerHTML = '<p style="padding:1rem; color:#888;">No data was submitted.</p>';
-            } else {
-                container.innerHTML = rows.join('');
-            }
-
-            // Show book title in success message
-            const titleParam = params.get('title');
-            if (titleParam) {
-                document.getElementById('successTitle').textContent = `"${titleParam}" has been logged!`;
-            }
-        });
-    </script>
+    <script src="scripts/log-action.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-top">
-            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
-                <picture>
-                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
-                        fetchpriority="high" onerror="this.style.display='none'">
-                </picture>
+            <a href="home.html" class="nav-logo">
+                <img src="images/pgturner.webp" alt="PageTurner Hub Logo" width="52" height="52">
             </a>
-            <p class="site-title">PageTurner Hub</p>
-            <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
-                    aria-controls="navLinks"></button>
-            </nav>
+            <span class="site-title">PageTurner Hub</span>
+            <button id="menu" aria-label="Toggle Navigation Menu">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
         </div>
-        <div class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
             <a href="home.html">Home</a>
             <a href="library.html">Library</a>
-            <a href="log.html">Log</a>
-        </div>
+            <a href="log.html">Reading Log</a>
+        </nav>
     </header>
 
     <main>
@@ -92,20 +48,19 @@
             <div class="action-success">
                 <span class="check-icon">✅</span>
                 <h2 id="successTitle">Book successfully logged!</h2>
-                <p style="font-size:0.875rem; color:#555; margin-top:0.5rem;">Your reading log has been saved.</p>
+                <p class="action-success-subtext">Your reading log has been saved.</p>
             </div>
 
             <div class="submitted-data">
                 <h3>Submitted Details</h3>
-                <div id="submittedData">
-                    <p style="padding:1rem; color:#888;">Loading…</p>
+                <div id=\"submittedData\">
+                    <p class="loading-text">Loading…</p>
                 </div>
             </div>
 
-            <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div class="action-buttons-wrap">
                 <a href="log.html" class="btn-primary">← Back to Log</a>
-                <a href="library.html" class="btn-outline"
-                    style="color:var(--primary); border-color:var(--border);">Browse Library</a>
+                <a href="library.html" class="btn-outline alternate-border-color">Browse Library</a>
             </div>
         </div>
     </main>
@@ -118,7 +73,7 @@
             <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
         </a>
         <p>&copy; <span id="currentyear"></span> André Piros</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
+        <p class="footer-last-modified">Last Modified: <span id="lastmodified"></span></p>
     </footer>
 </body>
 

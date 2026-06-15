@@ -19,19 +19,28 @@ async function fetchBooks() {
         console.error('Failed to load books:', error);
         document.getElementById('booksGrid').innerHTML =
             `<p class="no-results">⚠️ Could not load books. Please try refreshing.</p>`;
-        document.getElementById('bookCount').textContent = 'Error loading data';
+        if (document.getElementById('displayedCount')) {
+            document.getElementById('displayedCount').textContent = 'Error';
+        }
     }
 }
 
-// ── Build genre filter options using array methods ────────────────────────────
+// ── Build genre filter options dynamically without duplication ────────────────
 function initFilters(books) {
-    const genres = [...new Set(books.map(b => b.genre))].sort();
     const genreSelect = document.getElementById('genreFilter');
+    if (!genreSelect) return;
+
+    // Read values already hardcoded in the HTML to prevent duplicates
+    const existingValues = Array.from(genreSelect.options).map(opt => opt.value.toLowerCase());
+
+    const genres = [...new Set(books.map(b => b.genre))].sort();
     genres.forEach(genre => {
-        const option = document.createElement('option');
-        option.value = genre;
-        option.textContent = genre;
-        genreSelect.appendChild(option);
+        if (!existingValues.includes(genre.toLowerCase())) {
+            const option = document.createElement('option');
+            option.value = genre.toLowerCase();
+            option.textContent = genre;
+            genreSelect.appendChild(option);
+        }
     });
 }
 
@@ -46,9 +55,13 @@ function starsHTML(rating) {
 // ── Render book cards using template literals ─────────────────────────────────
 function renderBooks(books) {
     const grid = document.getElementById('booksGrid');
-    const count = document.getElementById('bookCount');
+    const displayedCountEl = document.getElementById('displayedCount');
+    const totalCountEl = document.getElementById('totalCount');
 
-    count.textContent = `${books.length} book${books.length !== 1 ? 's' : ''}`;
+    if (displayedCountEl) displayedCountEl.textContent = books.length;
+    if (totalCountEl) totalCountEl.textContent = allBooks.length;
+
+    if (!grid) return;
 
     if (books.length === 0) {
         grid.innerHTML = `<p class="no-results">No books match your search. Try adjusting the filters.</p>`;
@@ -96,31 +109,36 @@ function renderBooks(books) {
 
 // ── Filter + sort using array methods ────────────────────────────────────────
 function applyFilters() {
-    const query = document.getElementById('searchInput').value.toLowerCase().trim();
-    const genre = document.getElementById('genreFilter').value;
-    const sort = document.getElementById('sortSelect').value;
+    const searchInput = document.getElementById('searchInput');
+    const genreFilter = document.getElementById('genreFilter');
+    const sortBy = document.getElementById('sortBy');
+
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const genre = genreFilter ? genreFilter.value.toLowerCase() : 'all';
+    const sort = sortBy ? sortBy.value : 'default';
 
     // filter
     filteredBooks = allBooks.filter(book => {
         const matchesQuery = !query ||
             book.title.toLowerCase().includes(query) ||
             book.author.toLowerCase().includes(query);
-        const matchesGenre = !genre || book.genre === genre;
+        const matchesGenre = !genre || genre === 'all' || book.genre.toLowerCase() === genre;
         return matchesQuery && matchesGenre;
     });
 
     // sort
     filteredBooks.sort((a, b) => {
         switch (sort) {
-            case 'title-asc': return a.title.localeCompare(b.title);
-            case 'title-desc': return b.title.localeCompare(a.title);
-            case 'rating-desc': return b.rating - a.rating;
-            case 'rating-asc': return a.rating - b.rating;
-            case 'pages-asc': return a.pages - b.pages;
-            case 'pages-desc': return b.pages - a.pages;
-            case 'year-desc': return b.year - a.year;
-            case 'year-asc': return a.year - b.year;
-            default: return 0;
+            case 'title':
+                return a.title.localeCompare(b.title);
+            case 'author':
+                return a.author.localeCompare(b.author);
+            case 'rating':
+                return b.rating - a.rating;
+            case 'pages':
+                return b.pages - a.pages;
+            default:
+                return 0;
         }
     });
 
@@ -144,35 +162,56 @@ function openModal(id) {
 
     // Pre-fill the log page link with book title
     const logLink = document.getElementById('modalLogLink');
-    logLink.href = `log.html?title=${encodeURIComponent(book.title)}&author=${encodeURIComponent(book.author)}`;
+    if (logLink) {
+        logLink.href = `log.html?title=${encodeURIComponent(book.title)}&author=${encodeURIComponent(book.author)}`;
+    }
 
     const overlay = document.getElementById('modalOverlay');
-    overlay.classList.add('open');
+    if (overlay) {
+        overlay.classList.add('open');
+    }
     document.body.style.overflow = 'hidden';
 
     // Focus close button for accessibility
-    setTimeout(() => document.getElementById('modalClose').focus(), 50);
+    setTimeout(() => {
+        const closeBtn = document.getElementById('closeModal');
+        if (closeBtn) closeBtn.focus();
+    }, 50);
 }
 
 function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('open');
+    const overlay = document.getElementById('modalOverlay');
+    if (overlay) {
+        overlay.classList.remove('open');
+    }
     document.body.style.overflow = '';
 }
 
 // ── Event listeners ───────────────────────────────────────────────────────────
-document.getElementById('modalClose').addEventListener('click', closeModal);
+const closeBtn = document.getElementById('closeModal');
+if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+}
 
-document.getElementById('modalOverlay').addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeModal();
-});
+const overlayEl = document.getElementById('modalOverlay');
+if (overlayEl) {
+    overlayEl.addEventListener('click', e => {
+        if (e.target === e.currentTarget) closeModal();
+    });
+}
 
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
 });
 
-document.getElementById('searchInput').addEventListener('input', applyFilters);
-document.getElementById('genreFilter').addEventListener('change', applyFilters);
-document.getElementById('sortSelect').addEventListener('change', applyFilters);
+const searchInputEl = document.getElementById('searchInput');
+if (searchInputEl) searchInputEl.addEventListener('input', applyFilters);
+
+const genreFilterEl = document.getElementById('genreFilter');
+if (genreFilterEl) genreFilterEl.addEventListener('change', applyFilters);
+
+const sortByEl = document.getElementById('sortBy');
+if (sortByEl) sortByEl.addEventListener('change', applyFilters);
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 fetchBooks();

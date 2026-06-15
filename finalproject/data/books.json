@@ -7,7 +7,7 @@
     "pages": 662,
     "rating": 4.5,
     "year": 2007,
-    "cover": "https://covers.openlibrary.org/b/id/8234567-M.jpg",
+    "cover": "images/wind.webp",
     "description": "A beautiful story of a legendary wizard told in his own words. Kvothe recounts his extraordinary life from his childhood to his days at the University.",
     "status": "available"
   },
@@ -19,7 +19,7 @@
     "pages": 688,
     "rating": 4.7,
     "year": 1965,
-    "cover": "https://covers.openlibrary.org/b/id/8218053-M.jpg",
+    "cover": "images/atrevido.webp",
     "description": "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, who would become the mysterious man known as Muad'Dib.",
     "status": "available"
   },
@@ -31,7 +31,7 @@
     "pages": 476,
     "rating": 4.8,
     "year": 2021,
-    "cover": "https://covers.openlibrary.org/b/id/10984753-M.jpg",
+    "cover": "images/lincoln.webp",
     "description": "A lone astronaut must save the earth from disaster in this propulsive science thriller full of solvable problems and unexpected discoveries.",
     "status": "available"
   },
@@ -43,7 +43,7 @@
     "pages": 304,
     "rating": 4.1,
     "year": 2020,
-    "cover": "https://covers.openlibrary.org/b/id/10219776-M.jpg",
+    "cover": "images/midnight.webp",
     "description": "Between life and death there is a library, and within that library, the shelves go on forever. Every book provides a chance to try another life you could have lived.",
     "status": "available"
   },
@@ -55,7 +55,7 @@
     "pages": 443,
     "rating": 4.4,
     "year": 2011,
-    "cover": "https://covers.openlibrary.org/b/id/8739161-M.jpg",
+    "cover": "images/mrfox.webp",
     "description": "A brief history of humankind — from the stone age to the 21st century, exploring how biology and history have defined us.",
     "status": "available"
   },
@@ -67,7 +67,7 @@
     "pages": 310,
     "rating": 4.6,
     "year": 1937,
-    "cover": "https://covers.openlibrary.org/b/id/6979861-M.jpg",
+    "cover": "images/hobbit.webp",
     "description": "Bilbo Baggins, a respectable hobbit, is swept into an epic quest to reclaim the dwarven city of Erebor from the dragon Smaug.",
     "status": "available"
   },
@@ -79,7 +79,7 @@
     "pages": 352,
     "rating": 4.5,
     "year": 2018,
-    "cover": "https://covers.openlibrary.org/b/id/8789620-M.jpg",
+    "cover": "images/ghost.webp",
     "description": "A memoir about a young woman who grew up in a survivalist family in the mountains of Idaho and went on to earn a PhD from Cambridge University.",
     "status": "available"
   },
@@ -91,7 +91,7 @@
     "pages": 208,
     "rating": 4.2,
     "year": 1988,
-    "cover": "https://covers.openlibrary.org/b/id/8747809-M.jpg",
+    "cover": "images/political.webp",
     "description": "A philosophical novel about a young Andalusian shepherd who dreams of traveling the world in search of a treasure as worldly as any ever found.",
     "status": "available"
   },
@@ -103,7 +103,7 @@
     "pages": 320,
     "rating": 4.7,
     "year": 2018,
-    "cover": "https://covers.openlibrary.org/b/id/10157706-M.jpg",
+    "cover": "images/shock.webp",
     "description": "A revolutionary system to get 1% better every day. James Clear distills the most fundamental information about habit formation, offering a science-based self-improvement system.",
     "status": "available"
   },
@@ -115,7 +115,7 @@
     "pages": 307,
     "rating": 4.0,
     "year": 2021,
-    "cover": "https://covers.openlibrary.org/b/id/10760536-M.jpg",
+    "cover": "images/japanese.webp",
     "description": "Told from the perspective of Klara, an Artificial Friend who observes human behavior with precision and a certain innocence.",
     "status": "available"
   },
@@ -127,7 +127,7 @@
     "pages": 378,
     "rating": 4.4,
     "year": 2011,
-    "cover": "https://covers.openlibrary.org/b/id/8235043-M.jpg",
+    "cover": "images/white.webp",
     "description": "A tale of gods, kings, immortal fame, and the human heart — a retelling of the Trojan War through the eyes of Patroclus.",
     "status": "available"
   },
@@ -139,7 +139,7 @@
     "pages": 499,
     "rating": 4.3,
     "year": 2011,
-    "cover": "https://covers.openlibrary.org/b/id/8278152-M.jpg",
+    "cover": "images/sarasota.webp",
     "description": "Kahneman reveals the two systems that drive the way we think: System 1 is fast, intuitive, and emotional; System 2 is slower, more deliberative, and more logical.",
     "status": "available"
   },
@@ -151,7 +151,7 @@
     "pages": 480,
     "rating": 4.3,
     "year": 2022,
-    "cover": "https://covers.openlibrary.org/b/id/13154200-M.jpg",
+    "cover": "images/queen.webp",
     "description": "A story about the nature of identity, disability, failure, and success — about how we know and don't know those we love.",
     "status": "available"
   },
@@ -163,7 +163,7 @@
     "pages": 286,
     "rating": 4.3,
     "year": 1969,
-    "cover": "https://covers.openlibrary.org/b/id/8739210-M.jpg",
+    "cover": "images/chained.webp ",
     "description": "A lone human emissary travels to the planet Winter, a world where the inhabitants change sex each month, in this groundbreaking novel.",
     "status": "available"
   },
@@ -175,7 +175,7 @@
     "pages": 273,
     "rating": 3.9,
     "year": 2018,
-    "cover": "https://covers.openlibrary.org/b/id/9263783-M.jpg",
+    "cover": "images/vital.webp",
     "description": "The story of two people and how their relationship changes and stays the same, across years, across countries, across an entire life.",
     "status": "available"
   },
@@ -187,7 +187,7 @@
     "pages": 400,
     "rating": 4.5,
     "year": 2008,
-    "cover": "https://covers.openlibrary.org/b/id/8391139-M.jpg",
+    "cover": "images/nora.webp",
     "description": "Set against the backdrop of China's Cultural Revolution, a secret military project sends signals into space to establish contact with aliens.",
     "status": "available"
   },
@@ -199,7 +199,7 @@
     "pages": 341,
     "rating": 4.4,
     "year": 2019,
-    "cover": "https://covers.openlibrary.org/b/id/10226009-M.jpg",
+    "cover": "images/will.webp",
     "description": "A story about a bank robbery gone wrong and ten strangers whose lives are unexpectedly intertwined in a way that changes them all.",
     "status": "available"
   },

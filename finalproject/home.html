@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | PageTurner Hub</title>
     <meta name="description"
-        content="Welcome to PageTurner Hub, your ultimate destination for book lovers. Discover new releases, explore our curated collections, and connect with fellow readers.">
+        content="Welcome to PageTurner Hub, your ultimate destination for book lovers. Discover new releases, explore our curated collections, and connect with fellow readers overseas.">
     <meta name="author" content="André Piros">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://saxogoal.github.io/wdd231/finalproject/home.html">
@@ -21,9 +21,7 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Home | PageTurner Hub">
-    <meta name="twitter:description"
-        content="Welcome to PageTurner Hub, your ultimate destination for book lovers. Discover new releases, explore our curated collections, and connect with fellow readers.">
-    <meta name="twitter:image" content="https://saxogoal.github.io/wdd231/finalproject/images/pgturner.webp">
+    <meta name="twitter:description" content="Welcome to PageTurner Hub, your ultimate digital book tracker.">
 
     <link rel="icon" href="images/pgturner.ico">
 
@@ -42,114 +40,85 @@
 <body>
     <header>
         <div class="header-top">
-            <a href="home.html" class="nav-logo" aria-label="PageTurner Hub Home">
-                <picture>
-                    <img src="images/pgturner.webp" alt="PageTurner Hub logo" width="52" height="35"
-                        fetchpriority="high" onerror="this.style.display='none'">
-                </picture>
+            <a href="home.html" class="nav-logo">
+                <img src="images/pgturner.webp" alt="PageTurner Hub Logo" width="52" height="52">
             </a>
-            <p class="site-title">PageTurner Hub</p>
-            <nav aria-label="Main navigation">
-                <button id="menu" aria-label="Open navigation menu" aria-expanded="false"
-                    aria-controls="navLinks"></button>
-            </nav>
+            <span class="site-title">PageTurner Hub</span>
+            <button id="menu" aria-label="Toggle Navigation Menu">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
         </div>
-        <div class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks">
             <a href="home.html" aria-current="page">Home</a>
             <a href="library.html">Library</a>
-            <a href="log.html">Log</a>
-        </div>
+            <a href="log.html">Reading Log</a>
+        </nav>
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero">
-            <p class="hero-tag">Your Personal Reading Companion</p>
-            <h1>Every great reader<br>started with <em>one book.</em></h1>
-            <p>Track what you've read, discover what's next, and build a reading life you're proud of — all in one
-                clean, beautiful space.</p>
+            <span class="hero-tag">Track your literary path</span>
+            <h1>Every book read is a <em>journey</em> remembered.</h1>
+            <p>PageTurner Hub lets you log your books, track your reading goals, and review your top picks all in one
+                clean place.</p>
             <div class="hero-cta">
-                <a href="library.html" class="btn-primary">Browse the Library</a>
-                <a href="log.html" class="btn-outline">Log a Book</a>
+                <a href="log.html" class="btn-primary">Log a Book Now</a>
+                <a href="library.html" class="btn-outline">Browse Library</a>
             </div>
         </section>
 
-        <!-- BENEFITS -->
         <section>
-            <span class="section-label">Why PageTurner Hub</span>
-            <h2 class="section-title">Reading changes everything.</h2>
+            <span class="section-label">Why use PageTurner?</span>
+            <h2 class="section-title">Cultivate a healthier reading habit</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <span class="benefit-icon">📚</span>
+                    <span class="benefit-icon">📈</span>
                     <div>
-                        <h3>Build your library</h3>
-                        <p>Browse and filter 20+ books across genres. Find your next read in seconds with smart
-                            filtering by genre, rating, and year.</p>
-                    </div>
-                </div>
-                <div class="benefit-card">
-                    <span class="benefit-icon">✅</span>
-                    <div>
-                        <h3>Track your progress</h3>
-                        <p>Log every book you finish with ratings and notes. Watch your reading history grow — and feel
-                            proud of every page turned.</p>
+                        <h3>Track Habits</h3>
+                        <p>Keep a detailed visual record of every book finished and monitor metrics over time.</p>
                     </div>
                 </div>
                 <div class="benefit-card">
                     <span class="benefit-icon">🎯</span>
                     <div>
-                        <h3>Set reading goals</h3>
-                        <p>Challenge yourself with a yearly reading goal. A visual progress bar keeps you motivated all
-                            year long.</p>
+                        <h3>Set Targets</h3>
+                        <p>Establish annual volume benchmarks and watch dynamic progress bars update instantly.</p>
                     </div>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">🧠</span>
+                    <span class="benefit-icon">💬</span>
                     <div>
-                        <h3>Grow your mind</h3>
-                        <p>Research shows consistent readers develop stronger empathy, better focus, and richer
-                            vocabulary. Start the habit today.</p>
+                        <h3>Save Reviews</h3>
+                        <p>Preserve your star ratings, impressions, and structural summaries safely in storage.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🔍</span>
+                    <div>
+                        <h3>Filter Easily</h3>
+                        <p>Quickly scan through your personalized directory sorted smoothly by genre or author.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- STATS -->
-        <section class="stats-bar">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number" id="stat-books">20</span>
-                    <span class="stat-label">Books in Library</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" id="stat-genres">8</span>
-                    <span class="stat-label">Genres</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" id="stat-logged">0</span>
-                    <span class="stat-label">Books Logged</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- QUOTES -->
         <section class="quotes-section">
             <div class="quote-display">
-                <span class="quote-mark">"</span>
+                <span class="quote-mark">“</span>
                 <p id="quote-text">A reader lives a thousand lives before he dies. The man who never reads lives only
                     one.</p>
                 <p id="quote-author">— George R.R. Martin</p>
-                <div class="quote-nav" id="quoteDots" aria-label="Quote navigation"></div>
+                <div class="quote-nav" id="quoteDots" role="region" aria-label="Quote navigation"></div>
             </div>
         </section>
 
-        <!-- CALL TO ACTION -->
-        <section style="text-align:center; padding: 3.5rem 1.25rem;">
+        <section class="cta-section">
             <span class="section-label">Ready to start?</span>
             <h2 class="section-title">Your reading journey begins here.</h2>
-            <p style="max-width:420px; margin: 0.75rem auto 2rem; color:#555551; font-size:0.95rem;">
-                Explore the library, log your first finished book, and set a goal for the year. It only takes a minute.
-            </p>
+            <p class="cta-description">Explore the library, log your first finished book, and set a goal for the year.
+                It only takes a minute.</p>
             <a href="log.html" class="btn-primary">Get Started →</a>
         </section>
     </main>
@@ -162,7 +131,7 @@
             <img src="images/logo-linkedin.svg" alt="LinkedIn" width="22" height="22">
         </a>
         <p>&copy; <span id="currentyear"></span> André Piros</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
+        <p class="footer-last-modified">Last Modified: <span id="lastmodified"></span></p>
     </footer>
 </body>
 
