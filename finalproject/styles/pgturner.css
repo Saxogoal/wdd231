@@ -128,38 +128,13 @@ header {
     transition: border-color 0.2s;
 }
 
-#menu::before,
-#menu::after,
-#menu span {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: var(--ivory);
-    border-radius: 2px;
-    transition: transform 0.25s, opacity 0.25s;
+#menu:hover,
+#menu:focus {
+    border-color: var(--accent);
+    outline: none;
 }
 
-#menu {
-    position: relative;
-}
-
-#menu::before {
-    position: absolute;
-    top: 11px;
-}
-
-#menu::after {
-    position: absolute;
-    bottom: 11px;
-}
-
-/* The middle line via box-shadow trick */
-#menu {
-    box-shadow: none;
-}
-
-/* Hamburger lines using pseudo + box trick */
+/* Hamburger lines */
 #menu .line1,
 #menu .line2,
 #menu .line3 {
@@ -181,12 +156,6 @@ header {
 
 #menu.open .line3 {
     transform: translateY(-7px) rotate(-45deg);
-}
-
-#menu:hover,
-#menu:focus {
-    border-color: var(--accent);
-    outline: none;
 }
 
 /* Nav links */
@@ -425,10 +394,12 @@ section:nth-child(even) {
 .quote-dot.active {
     background: #f7f4ef;
 }
+
 .quote-dot:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 3px;
 }
+
 /* =====================
    BENEFITS GRID
    ===================== */
@@ -470,15 +441,6 @@ section:nth-child(even) {
 /* =====================
    STATS BAR
    ===================== */
-.stat-label {
-    font-size: 0.75rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-top: 0.3rem;
-    display: block;
-}
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -656,10 +618,12 @@ section:nth-child(even) {
     color: var(--secondary);
     font-weight: 600;
 }
+
 .book-card:focus-visible {
     outline: 3px solid var(--secondary);
     outline-offset: 3px;
 }
+
 .stars {
     color: #c8971a;
 }
@@ -773,10 +737,12 @@ section:nth-child(even) {
     transition: opacity 0.2s;
     flex-shrink: 0;
 }
+
 .modal-close:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 3px;
 }
+
 .modal-close:hover {
     opacity: 1;
 }
