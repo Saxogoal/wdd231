@@ -5,24 +5,16 @@
 }
 
 :root {
-    /* Color Palette — Adjusted for AAA/AA Accessibility Contrast Compliance */
+    /* Color Palette — AAA/AA Accessibility Contrast Compliance */
     --primary: #3b2f2f;
-    /* Espresso */
     --secondary: #704426;
-    /* Cognac (Slightly darkened to pass on parchment) */
     --accent: #f0e6d8;
-    /* Parchment */
     --leaf: #34593f;
     --leaf-dark: #3d664a;
-    /* Leaf green (Deepened to pass on light backgrounds) */
     --text: #2c2c2a;
-    /* Charcoal text */
     --ivory: #f7f4ef;
-    /* High Contrast Light */
     --leaf-light: #e8f3ec;
-    /* Light green tint */
     --border: #d8c8b8;
-    /* Warm border */
     --shadow: rgba(59, 47, 47, 0.12);
 
     /* Typography */
@@ -135,7 +127,6 @@ header {
     outline: none;
 }
 
-/* Hamburger lines */
 #menu .line1,
 #menu .line2,
 #menu .line3 {
@@ -289,7 +280,8 @@ section:nth-child(even) {
     justify-content: center;
 }
 
-.pt-btn-primary {
+/* Updated Button Classes */
+.button-primary {
     background: var(--secondary);
     color: var(--ivory);
     padding: 0.75rem 1.75rem;
@@ -303,14 +295,14 @@ section:nth-child(even) {
     display: inline-block;
 }
 
-.pt-btn-primary:hover {
+.button-primary:hover {
     background: #57331c;
     transform: translateY(-1px);
     text-decoration: none;
     color: var(--ivory);
 }
 
-.pt-btn-outline {
+.button-outline {
     background: transparent;
     color: var(--ivory);
     padding: 0.75rem 1.75rem;
@@ -324,7 +316,7 @@ section:nth-child(even) {
     display: inline-block;
 }
 
-.pt-btn-outline:hover {
+.button-outline:hover {
     background: rgba(247, 244, 239, 0.1);
     transform: translateY(-1px);
     text-decoration: none;
@@ -489,7 +481,6 @@ section:nth-child(even) {
     font-size: 0.95rem;
 }
 
-/* Filter bar */
 .filter-bar {
     background: var(--accent);
     padding: 1.25rem;
@@ -537,7 +528,6 @@ section:nth-child(even) {
     font-weight: 600;
 }
 
-/* Book grid */
 .books-section {
     padding: 1.5rem 1.25rem 3rem;
 }
@@ -612,7 +602,6 @@ section:nth-child(even) {
     font-family: var(--mono-font);
     font-size: 0.72rem;
     color: #626260;
-    /* Changed from #888 */
     flex-wrap: wrap;
 }
 
@@ -630,7 +619,6 @@ section:nth-child(even) {
     color: #573c00;
 }
 
-/* Empty state */
 .empty-state {
     text-align: center;
     padding: 4rem 1rem;
@@ -745,10 +733,6 @@ section:nth-child(even) {
     outline-offset: 3px;
 }
 
-.modal-close:hover {
-    opacity: 1;
-}
-
 .modal-body {
     padding: 1.5rem;
 }
@@ -780,7 +764,6 @@ section:nth-child(even) {
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #626260;
-    /* Changed from #888 */
     display: block;
     margin-top: 0.2rem;
 }
@@ -798,7 +781,7 @@ section:nth-child(even) {
     flex-wrap: wrap;
 }
 
-.modal-actions .pt-btn-primary {
+.modal-actions .button-primary {
     flex: 1;
     text-align: center;
     min-width: 140px;
@@ -830,7 +813,6 @@ section:nth-child(even) {
     gap: 0;
 }
 
-/* Log form */
 .log-form-section {
     padding: 2rem 1.25rem;
     background: var(--ivory);
@@ -841,11 +823,12 @@ section:nth-child(even) {
     margin-bottom: 1.5rem;
 }
 
-.pt-form-group {
+/* Updated Form Field Classes */
+.form-field {
     margin-bottom: 1.25rem;
 }
 
-.pt-form-group label {
+.form-field label {
     display: block;
     font-size: 0.82rem;
     font-weight: 600;
@@ -855,9 +838,9 @@ section:nth-child(even) {
     margin-bottom: 0.4rem;
 }
 
-.pt-form-group input,
-.pt-form-group select,
-.pt-form-group textarea {
+.form-field input,
+.form-field select,
+.form-field textarea {
     width: 100%;
     padding: 0.65rem 0.9rem;
     border: 1.5px solid var(--border);
@@ -870,14 +853,14 @@ section:nth-child(even) {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.pt-form-group input:focus,
-.pt-form-group select:focus,
-.pt-form-group textarea:focus {
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
     border-color: var(--secondary);
     box-shadow: 0 0 0 3px rgba(112, 68, 38, 0.12);
 }
 
-.pt-form-group textarea {
+.form-field textarea {
     resize: vertical;
     min-height: 90px;
 }
@@ -908,7 +891,7 @@ section:nth-child(even) {
     transform: scale(1.15);
 }
 
-.form-row {
+.form-fields-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -976,7 +959,6 @@ section:nth-child(even) {
     font-family: var(--mono-font);
     font-size: 0.75rem;
     color: var(--leaf-dark);
-    /* Changed from var(--leaf) */
     font-weight: 600;
 }
 
@@ -1022,7 +1004,6 @@ section:nth-child(even) {
     font-family: var(--mono-font);
     font-size: 0.72rem;
     color: #626260;
-    /* Changed from #888 */
     margin-top: 0.25rem;
 }
 
@@ -1198,5 +1179,4 @@ footer span {
 .book-meta span,
 .book-card span {
     color: #444442;
-    /* Clean, accessible dark gray */
 }

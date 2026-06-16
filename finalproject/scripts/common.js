@@ -39,8 +39,6 @@ function initCommonLayout() {
     const yearEl = document.getElementById("currentyear");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // document.lastModified is unreliable on GitHub Pages (returns epoch or blank).
-    // Update this date string manually each time you push changes.
     const modifiedEl = document.getElementById("lastmodified");
-    if (modifiedEl) modifiedEl.textContent = "06/16/2026";
+    if (modifiedEl) modifiedEl.textContent = document.lastModified;
 }
