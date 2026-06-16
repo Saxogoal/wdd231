@@ -39,6 +39,6 @@ function initCommonLayout() {
     const yearEl = document.getElementById("currentyear");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    const modifiedEl = document.getElementById("lastModified");
+    const modifiedEl = document.getElementById("lastmodified");
     if (modifiedEl) modifiedEl.textContent = document.lastModified;
 }
