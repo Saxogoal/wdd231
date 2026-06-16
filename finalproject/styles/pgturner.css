@@ -771,7 +771,7 @@ section:nth-child(even) {
     font-family: var(--mono-font);
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--text) !important;
     display: block;
 }
 
@@ -1199,10 +1199,4 @@ footer span {
 .book-card span {
     color: #444442;
     /* Clean, accessible dark gray */
-}
-
-/* Ensures page numbers inside the detailed view modal pass contrast tests */
-.modal-stat-value {
-    color: var(--text) !important;
-    font-weight: 700;
 }
