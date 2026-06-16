@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="styles/pgturner-large.css">
 
     <script src="scripts/common.js" defer></script>
-    <script type="module"src="scripts/log.js" defer></script>
+    <script type="module" src="scripts/log.js" defer></script>
 </head>
 
 <body>
@@ -67,19 +67,19 @@
             <section class="log-form-section">
                 <h2>Record a Book</h2>
                 <form id="logBookForm" action="log-action.html" method="get">
-                    <div class="form-group">
+                    <div class="pt-form-group">
                         <label for="bookTitle">Book Title *</label>
                         <input type="text" id="bookTitle" name="title" required placeholder="e.g., The Great Gatsby">
                     </div>
 
-                    <div class="form-group">
+                    <div class="pt-form-group">
                         <label for="bookAuthor">Author *</label>
                         <input type="text" id="bookAuthor" name="author" required
                             placeholder="e.g., F. Scott Fitzgerald">
                     </div>
 
                     <div class="form-fields-row">
-                        <div class="form-group">
+                        <div class="pt-form-group">
                             <label for="bookGenre">Genre</label>
                             <select id="bookGenre" name="genre">
                                 <option value="Fiction">Fiction</option>
@@ -93,18 +93,18 @@
                                 <option value="Other">Other</option>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="pt-form-group">
                             <label for="bookPages">Page Count</label>
                             <input type="number" id="bookPages" name="pages" min="1" placeholder="320">
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="pt-form-group">
                         <label for="bookFinishDate">Date Finished *</label>
                         <input type="date" id="bookFinishDate" name="finishDate" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="pt-form-group">
                         <label>Your Rating</label>
                         <div class="rating-input">
                             <button type="button" class="star-btn" data-value="1" aria-label="1 Star">★</button>
@@ -116,7 +116,7 @@
                         <input type="hidden" id="bookRating" name="rating" value="0">
                     </div>
 
-                    <div class="form-group">
+                    <div class="pt-form-group">
                         <label for="bookNotes">Thoughts & Notes</label>
                         <textarea id="bookNotes" name="notes"
                             placeholder="What stayed with you after finishing this book?"></textarea>
@@ -131,7 +131,7 @@
                 <div class="goal-form">
                     <h3>Configure Target</h3>
                     <div class="form-fields-row">
-                        <div class="form-group">
+                        <div class="pt-form-group">
                             <label for="goalInput">Books Target</label>
                             <input type="number" id="goalInput" min="1" max="200" value="12">
                         </div>
