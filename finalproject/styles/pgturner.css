@@ -435,7 +435,7 @@ section:nth-child(even) {
 
 .benefit-card p {
     font-size: 0.875rem;
-    color: #555551;
+    color: #3a3a38;
     line-height: 1.55;
 }
 
@@ -1156,9 +1156,11 @@ footer p {
     font-family: var(--mono-font);
     font-size: 0.75rem;
 }
+
 footer span {
     color: #dcd8d3;
 }
+
 /* =====================
    ACCESSIBILITY / UTILITIES
    ===================== */
@@ -1192,6 +1194,7 @@ footer span {
     font-size: 0.9rem;
     grid-column: 1/-1;
 }
+
 .book-meta span,
 .book-card span {
     color: #444442;
